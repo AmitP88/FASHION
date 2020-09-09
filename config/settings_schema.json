@@ -956,6 +956,23 @@
       {
         "type": "header",
         "content": {
+          "en": "Slider"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "subtitle_family",
+        "label": {
+          "en": "Subtitle Font"
+        },
+        "default": "old_standard_tt_n4"
+      },
+
+
+
+      {
+        "type": "header",
+        "content": {
           "cs": "Základní text",
           "da": "Brødtekst",
           "de": "Fließtext",
