@@ -1,0 +1,61 @@
+  <div class="drawer__inner drawer-left__inner">
+
+    {% if section.settings.drawer_search_enable %}
+      {% include 'search-bar', search_btn_style: 'btn--secondary', search_bar_location: 'search-bar--drawer' %}
+    {% endif %}
+
+    <ul class="mobile-nav">
+      {% for link in linklists.main-menu.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+      {% comment %}
+        Spacer element
+      {% endcomment %}
+      <li class="site-nav__item site-nav__item--compressed">
+        <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
+          <span class="icon-fallback-text">
+            <div class="my-cart">
+              <span class="icon icon-cart" aria-hidden="true"></span>
+              <p>My Cart</p>
+              <p>
+                {% if cart.item_count > 0 %}
+                  {{ cart.item_count }}
+                {% endif %}
+              </p>                      
+            </div>
+            <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
+          </span>
+          <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
+        </a>
+      </li>
+
+      <div class="site-nav__item">
+        <a href="#swym-wishlist" class="swym-wishlist site-nav__link">
+          <!-- <i aria-hidden="true" focusable="false" role="presentation" class="icon icon-swym-wishlist"></i> -->
+          {{ 'Wishlist' }}
+        </a>                
+      </div>
+
+
+      {% if shop.customer_accounts_enabled %}
+        <li class="site-nav__item site-nav__expanded-item site-nav__item--compressed">
+          <a class="site-nav__link site-nav__link--icon" href="{{ routes.account_url }}">
+            <span class="icon-fallback-text">
+              <!-- <span class="icon icon-customer" aria-hidden="true"></span> -->
+              <p>My Account</p>
+              <span class="fallback-text">
+                {% if customer %}
+                  {{ 'layout.customer.account' | t }}
+                {% else %}
+                  {{ 'layout.customer.log_in' | t }}
+                {% endif %}
+              </span>
+            </span>
+          </a>
+        </li>
+      {% endif %}
+      <li class="mobile-nav__spacer"></li>
+    </ul>
+    <!-- //mobile-nav -->
+  </div>
+
