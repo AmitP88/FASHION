@@ -2647,6 +2647,9 @@ $slick-dot-character: '\2022';
   right: 0;
   bottom: 0;
   top: 45%;
+  @include at-query($max, 450px) {
+    top: 75%;
+  }
   li {
     margin-bottom: 0;
     list-style: none;
