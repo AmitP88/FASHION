@@ -1754,13 +1754,33 @@ $socialIconFontStack: 'icons';
 .icon-saletag:before { content: "\e906"; }
 .icon-search:before { content:'\73'; }
 .icon-snapchat:before { content:'\e90b'; }
-.icon-slide-prev:before { content: "\e903"; }
-.icon-slide-next:before { content: "\e905"; }
+// .icon-slide-prev:before { content: "\e903"; }
+// .icon-slide-next:before { content: "\e905"; }
 .icon-tumblr:before { content:'\74'; }
 .icon-twitter:before { content:'\54'; }
 .icon-vimeo:before { content:'\76'; }
 .icon-x:before { content:'\e604'; }
 .icon-youtube:before { content:'\79'; }
+
+.icon-slide-prev {
+  border: solid black;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-left: 5px;
+}
+
+.icon-slide-next {
+  border: solid black;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 5px;
+}
 
 .payment-icons {
   @include prefix('user-select', 'none');
