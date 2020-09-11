@@ -174,6 +174,12 @@
   font-size: $sliderSubtitleFontStyle;
 }
 
+@mixin sliderTitleFontStack {
+  font-family: $sliderTitleFontStack;
+  font-weight: $sliderTitleFontWeight;
+  font-size: $sliderTitleFontStyle;
+}
+
 @mixin bodyFontItalic {
   {% if settings.type_base_italize_titles %}
     font-style: italic;
@@ -436,12 +442,14 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign header_family = settings.type_header_family -%}
 {%- assign bottom_bar_family = settings.bottom_bar_font_family -%}
 {%- assign slider_subtitle_family = settings.subtitle_family -%}
+{%- assign slider_title_family = settings.title_family -%}
 
 {{ accent_family | font_face }}
 {{ base_family | font_face }}
 {{ header_family | font_face }}
 {{ bottom_bar_family | font_face }}
 {{ slider_subtitle_family | font_face }}
+{{ slider_title_family | font_face }}
 
 {%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
 {%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
@@ -449,6 +457,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
 {%- assign bottom_bar_family_bold = bottom_bar_family | font_modify: 'weight', 'bolder' -%}
 {%- assign slider_subtitle_family_bold = slider_subtitle_family | font_modify: 'weight', 'bolder' -%}
+{%- assign slider_title_family_bold = slider_title_family | font_modify: 'weight', 'bolder' -%}
 
 {{ base_family_bold | font_face }}
 {{ base_family_italic | font_face }}
@@ -456,6 +465,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ accent_family_bold | font_face }}
 {{ bottom_bar_family_bold | font_face }}
 {{ slider_subtitle_family_bold | font_face }}
+{{ slider_title_family_bold | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -487,6 +497,12 @@ $sliderSubtitleFontStack: {{ slider_subtitle_family.family }}, {{ slider_subtitl
 $sliderSubtitleFontWeight: {{ slider_subtitle_family.weight }};
 $sliderSubtitleFontWeightBold: {{ slider_subtitle_family_bold.weight | default: 700 }};
 $sliderSubtitleFontStyle: {{ slider_subtitle_family.style }};
+
+// Slider Title Font
+$sliderTitleFontStack: {{ slider_title_family.family }}, {{ slider_title_family.fallback_families }};
+$sliderTitleFontWeight: {{ slider_title_family.weight }};
+$sliderTitleFontWeightBold: {{ slider_title_family_bold.weight | default: 700 }};
+$sliderTitleFontStyle: {{ slider_title_family.style }};
 
 @font-face {
   font-family: 'icons';
@@ -2344,6 +2360,7 @@ $slideshow-indicator-size: 1.25rem;
     margin-bottom: 1.25rem;
     line-height: 1.25;
     letter-spacing: 0;
+    @include sliderTitleFontStack;
   }
 
   .hero__subtitle {
