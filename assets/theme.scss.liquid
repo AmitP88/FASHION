@@ -4849,11 +4849,46 @@ $disclosure-list-large: 1100px;
   // --------------------------------------------------------------
   // Highlights Section
   // --------------------------------------------------------------
-  .highlights {
-    .grid-wrapper {
-      background-color: azure;
-      .grid-number {
-        background-color: lightgreen;
+  @media screen and (min-width: 1200px){
+    .highlights {
+      max-width: 1171px;
+      height: 760px;
+      margin: 0 auto;
+      .container {
+        display: flex;
+        width: fit-content;
+        .left-col {
+          width: fit-content;
+          .one {
+            width: 638px;
+            height: 482px;
+            background-color: red;
+          }
+          .two {
+            width: 638px;
+            height: 248px;
+            background-color: blue;
+          }
+        }
+        .right-col {
+          width: fit-content;
+          .one {
+            width: 500px;
+            height: 50%;
+            background-color: green;
+          }
+          .two {
+            width: 500px;
+            height: 50%;
+            background-color: purple;
+          }
+        }
       }
     }
+
+
+
+
+
+
   }
