@@ -1,12 +1,12 @@
 <div class="highlights">
   <div class="container">
     <div class="left-col">
-      <div class="cell one">A</div>
-      <div class="cell two">B</div>
+      <div class="cell one">{{ section.settings.image1 }}</div>
+      <div class="cell two">{{ section.settings.image1_description }}</div>
     </div>
     <div class="right-col">
-      <div class="cell one">C</div>
-      <div class="cell two">D</div>
+      <div class="cell one">{{ section.settings.image2 }}</div>
+      <div class="cell two">{{ section.settings.image3 }}</div>
     </div>    
   </div>
 </div>
@@ -14,6 +14,28 @@
 {% schema %}
   {
     "name": "Highlights",
+    "settings": [
+      {
+        "id": "image1",
+        "type": "image_picker",
+        "label": "Image 1"
+      },
+      {
+        "id": "image2",
+        "type": "image_picker",
+        "label": "Image 2"
+      },
+      {
+        "id": "image1_description",
+        "type": "textarea",
+        "label": "Image 1 Description"
+      },
+      {
+        "id": "image3",
+        "type": "image_picker",
+        "label": "Image 3"
+      }
+    ],
     "presets": [
       {
         "name": "Highlights",
