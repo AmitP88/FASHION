@@ -4897,40 +4897,39 @@ $disclosure-list-large: 1100px;
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     .highlights {
       max-width: 1171px;
-      // height: 760px;
+      height: 760px;
       margin: 0 auto;
       .container {
+        display: flex;
+        width: fit-content;
         .left-col {
+          width: 55%;
           .one {
-            // width: 95%;
-            margin: 0 auto;
-            margin-bottom: 20px;
+            width: 100%;
             height: auto;
             background-color: red;
+            margin-bottom: 2%;
           }
           .two {
-            // width: 95%;
-            margin: 0 auto;
-            margin-bottom: 20px;
+            width: 100%;
             height: auto;
             background-color: blue;
           }
         }
-
         .right-col {
+          width: 45%;
           .one {
-            // width: 95%;
-            margin: 0 auto;
-            margin-bottom: 20px;
+            width: 100%;
             height: auto;
             background-color: green;
+            margin-left: 2%;
+            margin-bottom: 2%;
           }
           .two {
-            // width: 95%;
-            margin: 0 auto;
-            margin-bottom: 20px;
+            width: 100%;
             height: auto;
             background-color: purple;
+            margin-left: 2%;
           }
         }
       }
