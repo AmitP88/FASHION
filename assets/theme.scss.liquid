@@ -4849,7 +4849,52 @@ $disclosure-list-large: 1100px;
   // --------------------------------------------------------------
   // Highlights Section
   // --------------------------------------------------------------
-  @media screen and (max-width: 1199px){
+  /* --- Mobile --- */
+  @media screen and (max-width: 767px){
+    .highlights {
+      max-width: 1171px;
+      // height: 760px;
+      margin: 0 auto;
+      .container {
+        .left-col {
+          .one {
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            height: auto;
+            background-color: red;
+          }
+          .two {
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            height: auto;
+            background-color: blue;
+          }
+        }
+
+        .right-col {
+          .one {
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            height: auto;
+            background-color: green;
+          }
+          .two {
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            height: auto;
+            background-color: purple;
+          }
+        }
+      }
+    }
+  }
+
+  /* --- Tablet --- */
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     .highlights {
       max-width: 1171px;
       // height: 760px;
@@ -4893,11 +4938,7 @@ $disclosure-list-large: 1100px;
   }
 
 
-
-
-
-
-
+  /* --- Desktop --- */
   @media screen and (min-width: 1200px){
     .highlights {
       max-width: 1171px;
