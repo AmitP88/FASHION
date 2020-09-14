@@ -1,13 +1,15 @@
 <div class="highlights">
   <div class="container">
     <div class="left-col">
-      <div class="cell one">{{ section.settings.image1 }}</div>
-      <div class="cell two">{{ section.settings.image1_description }}</div>
+      <img src="{{ section.settings.image1 | img_url: '638x482' }}" class="cell one" alt="{{ section.settings.image1 }}" >
+      <div class="cell two">
+        <p class="description">{{ section.settings.image1_description }}</p>
+      </div>
     </div>
     <div class="right-col">
-      <div class="cell one">{{ section.settings.image2 }}</div>
-      <div class="cell two">{{ section.settings.image3 }}</div>
-    </div>    
+      <img src="{{ section.settings.image2 | img_url: '500x361' }}" class="cell one" alt="{{ section.settings.image2 }}" >
+      <img src="{{ section.settings.image3 | img_url: '500x361' }}" class="cell two" alt="{{ section.settings.image3 }}" >
+    </div>
   </div>
 </div>
 
