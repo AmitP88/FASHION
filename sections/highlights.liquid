@@ -4,6 +4,7 @@
       <img src="{{ section.settings.image1 | img_url: '638x482' }}" class="cell one" alt="{{ section.settings.image1 }}" >
       <div class="cell two">
         <h4 class="heading">{{ section.settings.image1_heading }}</h4>
+        <h2 class="subheading">{{ section.settings.image1_subheading }}</h2>
         <p class="description">{{ section.settings.image1_description }}</p>
       </div>
     </div>
@@ -33,6 +34,12 @@
         "type": "text",
         "label": "Image 1 Heading",
         "default": "hot collection"
+      },
+      {
+        "id": "image1_subheading",
+        "type": "text",
+        "label": "Image 1 Subheading",
+        "default": "new trend for women"
       },
       {
         "id": "image1_description",
