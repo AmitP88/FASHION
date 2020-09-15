@@ -6,7 +6,7 @@
         <h4 class="heading">{{ section.settings.image1_heading }}</h4>
         <h2 class="subheading">{{ section.settings.image1_subheading }}</h2>
         <p class="description">{{ section.settings.image1_description }}</p>
-        <a href="http://">
+        <a href="{{ section.settings.button_url }}">
           <div class="button">{{ section.settings.button_text }}</div>
         </a>
       </div>
@@ -49,6 +49,11 @@
         "type": "textarea",
         "label": "Image 1 Description",
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mollis neque eu erat aliquet posuere. Curabitur quis placerat nulla, nec vulputate arcu."
+      },
+      {
+        "id": "button_url",
+        "type": "url",
+        "label": "Button URL"
       },
       {
         "id": "button_text",
