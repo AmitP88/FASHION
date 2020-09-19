@@ -4846,49 +4846,79 @@ $disclosure-list-large: 1100px;
   }
 }
 
-  // --------------------------------------------------------------
-  // Highlights Section
-  // --------------------------------------------------------------
+// --------------------------------------------------------------
+// Highlights Section
+// --------------------------------------------------------------
+.highlights {
+  max-width: 1171px;
+  margin: 0 auto;
+  height: 760px;
+  .container {
+    display: flex;
+    width: fit-content;
+    margin: 5%;
+    .left-col {
+      .one {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        height: auto;
+        background-color: red;
+      }
+      .two {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        height: auto;
+        background-color: azure;
+        .heading, .subheading {
+          text-transform: capitalize;
+        }
+        .description {
+          max-width: 540px;
+        }
+        a > .button {
+          width: fit-content;
+          border: 2px solid #898989;
+          width: 147px;
+          height: 43px;
+          text-align: center;
+          line-height: 38px;
+          color: #7b797b;
+        }
+      }
+    }
+    .right-col {
+      .one {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        height: auto;
+        background-color: green;
+      }
+      .two {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        height: auto;
+        background-color: purple;
+      }
+    }
+  }
+}
+
+
+
+
+
 
   /* --- Mobile --- */
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 499px){
     .highlights {
-      max-width: 1171px;
-      // height: 760px;
-      margin: 0 auto;
+      height: auto;
       .container {
-        .left-col {
-          .one {
-            width: 100%;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            height: auto;
-            background-color: red;
-          }
-          .two {
-            width: 100%;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            height: auto;
-            background-color: azure;
-            .heading, .subheading {
-              text-transform: capitalize;
-            }
-            .description {
-              max-width: 540px;
-            }
-            a > .button {
-              width: fit-content;
-              border: 2px solid #898989;
-              width: 147px;
-              height: 43px;
-              text-align: center;
-              line-height: 38px;
-              color: #7b797b;
-            }
-          }
-        }
-
+        display: block;
+        margin: 0;
         .right-col {
           .one {
             width: 100%;
@@ -4910,43 +4940,12 @@ $disclosure-list-large: 1100px;
   }
 
   /* --- Tablet --- */
-  @media screen and (min-width: 500px) and (max-width: 1200px) {
+  @media screen and (min-width: 500px) and (max-width: 1199px) {
     .highlights {
-      max-width: 1171px;
-      height: 760px;
-      margin: 0 auto;
       .container {
-        display: flex;
-        width: fit-content;
-        margin: 5%;
+        margin: 0;
         .left-col {
           width: 55%;
-          .one {
-            width: 100%;
-            height: auto;
-            background-color: red;
-            margin-bottom: 2%;
-          }
-          .two {
-            width: 100%;
-            height: auto;
-            background-color: azure;
-            .heading, .subheading {
-              text-transform: capitalize;
-            }
-            .description {
-              max-width: 540px;
-            }
-            a > .button {
-              width: fit-content;
-              border: 2px solid #898989;
-              width: 147px;
-              height: 43px;
-              text-align: center;
-              line-height: 38px;
-              color: #7b797b;
-            }
-          }
         }
         .right-col {
           width: 45%;
@@ -4972,12 +4971,8 @@ $disclosure-list-large: 1100px;
   /* --- Desktop --- */
   @media screen and (min-width: 1200px){
     .highlights {
-      max-width: 1171px;
-      height: 760px;
-      margin: 0 auto;
       .container {
-        display: flex;
-        width: fit-content;
+        margin: 0;
         .left-col {
           width: fit-content;
           .one {
