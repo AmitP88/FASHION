@@ -15,12 +15,18 @@
       <a href="#">
         <div class="cell one">
           <img src="{{ section.settings.image2 | img_url: '500x361' }}" alt="{{ section.settings.image2 }}" >
+          <a href="#">
+            <div class="cell-text">{{ section.settings.image_2_link_text }}</div>
+          </a>
           <div class="overlay"></div>
         </div>        
       </a>
       <a href="#">
         <div class="cell two">
           <img src="{{ section.settings.image3 | img_url: '500x361' }}" alt="{{ section.settings.image3 }}" >
+          <a href="#">
+            <div class="cell-text">{{ section.settings.image_2_link_text }}</div>            
+          </a>
           <div class="overlay"></div>
         </div>        
       </a>
@@ -36,11 +42,6 @@
         "id": "image1",
         "type": "image_picker",
         "label": "Image 1"
-      },
-      {
-        "id": "image2",
-        "type": "image_picker",
-        "label": "Image 2"
       },
       {
         "id": "image1_heading",
@@ -72,9 +73,36 @@
         "default": "Shop Now"
       },
       {
+        "id": "image2",
+        "type": "image_picker",
+        "label": "Image 2"
+      },
+      {
+        "id": "image_2_link_text",
+        "type": "text",
+        "label": "Image 2 Link Text",
+        "default": "View Collection"
+      },
+      {
+        "id": "image_2_link",
+        "type": "url",
+        "label": "Image 2 Link"
+      },
+      {
         "id": "image3",
         "type": "image_picker",
         "label": "Image 3"
+      },
+      {
+        "id": "image_3_link_text",
+        "type": "text",
+        "label": "Image 3 Link Text",
+        "default": "View Collection"
+      },
+      {
+        "id": "image_3_link",
+        "type": "url",
+        "label": "Image 3 Link"
       }
     ],
     "presets": [
