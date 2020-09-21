@@ -12,8 +12,18 @@
       </div>
     </div>
     <div class="right-col">
-      <img src="{{ section.settings.image2 | img_url: '500x361' }}" class="cell one" alt="{{ section.settings.image2 }}" >
-      <img src="{{ section.settings.image3 | img_url: '500x361' }}" class="cell two" alt="{{ section.settings.image3 }}" >
+      <a href="#">
+        <div class="cell one">
+          <img src="{{ section.settings.image2 | img_url: '500x361' }}" alt="{{ section.settings.image2 }}" >
+          <div class="overlay"></div>
+        </div>        
+      </a>
+      <a href="#">
+        <div class="cell two">
+          <img src="{{ section.settings.image3 | img_url: '500x361' }}" alt="{{ section.settings.image3 }}" >
+          <div class="overlay"></div>
+        </div>        
+      </a>
     </div>
   </div>
 </div>
