@@ -4898,6 +4898,9 @@ $disclosure-list-large: 1100px;
         .overlay {
           display: none;
         }
+        .cell-text {
+          display: none;
+        }
       }
       .one:hover .overlay {
         display: block;
@@ -4907,6 +4910,18 @@ $disclosure-list-large: 1100px;
         background: #000000;
         opacity: 0.3;
         top: 0;
+        z-index: 1;
+      }
+      .one:hover .cell-text {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        padding: 18px 35px;
+        z-index: 2;
       }
       .two {
         width: 100%;
@@ -4915,6 +4930,9 @@ $disclosure-list-large: 1100px;
         height: auto;
         position: relative;
         .overlay {
+          display: none;
+        }
+        .cell-text {
           display: none;
         }
       }
@@ -4926,6 +4944,17 @@ $disclosure-list-large: 1100px;
         background: #000000;
         opacity: 0.3;
         top: 0;
+      }
+      .two:hover .cell-text {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        padding: 18px 35px;
+        z-index: 2;
       }
     }
   }
@@ -4952,6 +4981,17 @@ $disclosure-list-large: 1100px;
             background: #000000;
             opacity: 0.3;
             top: 0;
+          }
+          .one .cell-text, .two .cell-text {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 18px 35px;
+            z-index: 2;
           }
         }
 

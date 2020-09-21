@@ -12,21 +12,17 @@
       </div>
     </div>
     <div class="right-col">
-      <a href="#">
+      <a href="{{ section.settings.image_2_link }}">
         <div class="cell one">
           <img src="{{ section.settings.image2 | img_url: '500x361' }}" alt="{{ section.settings.image2 }}" >
-          <a href="#">
-            <div class="cell-text">{{ section.settings.image_2_link_text }}</div>
-          </a>
+          <div class="cell-text">{{ section.settings.image_2_link_text }}</div>
           <div class="overlay"></div>
         </div>        
       </a>
-      <a href="#">
+      <a href="{{ section.settings.image_3_link }}">
         <div class="cell two">
           <img src="{{ section.settings.image3 | img_url: '500x361' }}" alt="{{ section.settings.image3 }}" >
-          <a href="#">
-            <div class="cell-text">{{ section.settings.image_2_link_text }}</div>            
-          </a>
+          <div class="cell-text">{{ section.settings.image_2_link_text }}</div>
           <div class="overlay"></div>
         </div>        
       </a>
