@@ -1009,7 +1009,7 @@
         "type": "font_picker",
         "id": "highlights_left_button_family",
         "label": {
-          "en": "Button Font"
+          "en": "Left Button Font"
         },
         "default": "old_standard_tt_n4"
       },
