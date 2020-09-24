@@ -1006,6 +1006,14 @@
         "default": "old_standard_tt_n4"
       },
       {
+        "type": "font_picker",
+        "id": "highlights_left_button_family",
+        "label": {
+          "en": "Button Font"
+        },
+        "default": "old_standard_tt_n4"
+      },
+      {
         "type": "header",
         "content": {
           "cs": "Základní text",
