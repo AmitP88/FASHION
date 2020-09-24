@@ -990,6 +990,14 @@
         "default": "old_standard_tt_n4"
       },
       {
+        "type": "font_picker",
+        "id": "highlights_subtitle_family",
+        "label": {
+          "en": "Subtitle Font"
+        },
+        "default": "old_standard_tt_n4"
+      },
+      {
         "type": "header",
         "content": {
           "cs": "Základní text",
