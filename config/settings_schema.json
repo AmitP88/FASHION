@@ -1014,6 +1014,14 @@
         "default": "old_standard_tt_n4"
       },
       {
+        "type": "font_picker",
+        "id": "highlights_right_button_family",
+        "label": {
+          "en": "Right Button Font"
+        },
+        "default": "old_standard_tt_n4"
+      },
+      {
         "type": "header",
         "content": {
           "cs": "Základní text",

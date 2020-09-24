@@ -204,6 +204,12 @@
   font-size: $highlightsLeftButtonFontStyle;
 }
 
+@mixin highlightsRightButtonFontStack {
+  font-family: $highlightsRightButtonFontStack;
+  font-weight: $highlightsRightButtonFontWeight;
+  font-size: $highlightsRightButtonFontStyle;
+}
+
 @mixin bodyFontItalic {
   {% if settings.type_base_italize_titles %}
     font-style: italic;
@@ -471,6 +477,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign highlights_subtitle_family  = settings.highlights_subtitle_family -%}
 {%- assign highlights_description_family  = settings.highlights_description_family -%}
 {%- assign highlights_left_button_family  = settings.highlights_left_button_family -%}
+{%- assign highlights_right_button_family  = settings.highlights_right_button_family -%}
 
 {{ accent_family | font_face }}
 {{ base_family | font_face }}
@@ -482,6 +489,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ highlights_subtitle_family | font_face }}
 {{ highlights_description_family | font_face }}
 {{ highlights_left_button_family | font_face }}
+{{ highlights_right_button_family | font_face }}
 
 {%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
 {%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
@@ -494,6 +502,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign highlights_subtitle_family_bold = highlights_subtitle_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_left_button_family_bold = highlights_left_button_family | font_modify: 'weight', 'bolder' -%}
+{%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
 
 {{ base_family_bold | font_face }}
 {{ base_family_italic | font_face }}
@@ -506,6 +515,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ highlights_subtitle_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
 {{ highlights_left_button_family_bold | font_face }}
+{{ highlights_right_button_family_bold | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -562,11 +572,17 @@ $highlightsDescriptionFontWeight: {{ highlights_description_family.weight }};
 $highlightsDescriptionFontWeightBold: {{ highlights_description_family_bold.weight | default: 700 }};
 $highlightsDescriptionFontStyle: {{ highlights_description_family.style }};
 
-// Highlights Button Font
+// Highlights Left Button Font
 $highlightsLeftButtonFontStack: {{ highlights_left_button_family.family }}, {{ highlights_left_button_family.fallback_families }};
 $highlightsLeftButtonFontWeight: {{ highlights_left_button_family.weight }};
 $highlightsLeftButtonFontWeightBold: {{ highlights_left_button_family_bold.weight | default: 700 }};
 $highlightsLeftButtonFontStyle: {{ highlights_left_button_family.style }};
+
+// Highlights Right Button Font
+$highlightsRightButtonFontStack: {{ highlights_right_button_family.family }}, {{ highlights_right_button_family.fallback_families }};
+$highlightsRightButtonFontWeight: {{ highlights_right_button_family.weight }};
+$highlightsRightButtonFontWeightBold: {{ highlights_right_button_family_bold.weight | default: 700 }};
+$highlightsRightButtonFontStyle: {{ highlights_right_button_family.style }};
 
 @font-face {
   font-family: 'icons';
@@ -4994,6 +5010,7 @@ $disclosure-list-large: 1100px;
         border: 2px solid #ffffff;
         padding: 18px 35px;
         z-index: 2;
+        @include highlightsRightButtonFontStack;
       }
       .two {
         width: 100%;
@@ -5027,6 +5044,7 @@ $disclosure-list-large: 1100px;
         border: 2px solid #ffffff;
         padding: 18px 35px;
         z-index: 2;
+        @include highlightsRightButtonFontStack;
       }
     }
   }
