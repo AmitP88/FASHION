@@ -978,6 +978,12 @@
       {
         "type": "header",
         "content": {
+          "en": "Highlights Section"
+        }
+      },
+      {
+        "type": "header",
+        "content": {
           "cs": "Základní text",
           "da": "Brødtekst",
           "de": "Fließtext",
