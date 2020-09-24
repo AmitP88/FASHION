@@ -192,6 +192,12 @@
   font-size: $highlightsSubtitleFontStyle;
 }
 
+@mixin highlightsDescriptionFontStack {
+  font-family: $highlightsDescriptionFontStack;
+  font-weight: $highlightsDescriptionFontWeight;
+  font-size: $highlightsDescriptionFontStyle;
+}
+
 @mixin bodyFontItalic {
   {% if settings.type_base_italize_titles %}
     font-style: italic;
@@ -457,6 +463,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign slider_title_family = settings.title_family -%}
 {%- assign highlights_title_family  = settings.highlights_title_family -%}
 {%- assign highlights_subtitle_family  = settings.highlights_subtitle_family -%}
+{%- assign highlights_description_family  = settings.highlights_description_family -%}
 
 {{ accent_family | font_face }}
 {{ base_family | font_face }}
@@ -466,6 +473,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ slider_title_family | font_face }}
 {{ highlights_title_family | font_face }}
 {{ highlights_subtitle_family | font_face }}
+{{ highlights_description_family | font_face }}
 
 {%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
 {%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
@@ -476,6 +484,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign slider_title_family_bold = slider_title_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_title_family_bold = highlights_title_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_subtitle_family_bold = highlights_subtitle_family | font_modify: 'weight', 'bolder' -%}
+{%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
 
 {{ base_family_bold | font_face }}
 {{ base_family_italic | font_face }}
@@ -486,6 +495,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ slider_title_family_bold | font_face }}
 {{ highlights_title_family_bold | font_face }}
 {{ highlights_subtitle_family_bold | font_face }}
+{{ highlights_description_family_bold | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -535,6 +545,12 @@ $highlightsSubtitleFontStack: {{ highlights_subtitle_family.family }}, {{ highli
 $highlightsSubtitleFontWeight: {{ highlights_subtitle_family.weight }};
 $highlightsSubtitleFontWeightBold: {{ highlights_subtitle_family_bold.weight | default: 700 }};
 $highlightsSubtitleFontStyle: {{ highlights_subtitle_family.style }};
+
+// Highlights Description Font
+$highlightsDescriptionFontStack: {{ highlights_description_family.family }}, {{ highlights_description_family.fallback_families }};
+$highlightsDescriptionFontWeight: {{ highlights_description_family.weight }};
+$highlightsDescriptionFontWeightBold: {{ highlights_description_family_bold.weight | default: 700 }};
+$highlightsDescriptionFontStyle: {{ highlights_description_family.style }};
 
 @font-face {
   font-family: 'icons';
@@ -4914,6 +4930,7 @@ $disclosure-list-large: 1100px;
         }
         .description {
           max-width: 540px;
+          @include highlightsDescriptionFontStack;
         }
         a > .button {
           width: fit-content;

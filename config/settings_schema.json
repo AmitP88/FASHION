@@ -998,6 +998,14 @@
         "default": "old_standard_tt_n4"
       },
       {
+        "type": "font_picker",
+        "id": "highlights_description_family",
+        "label": {
+          "en": "Description Font"
+        },
+        "default": "old_standard_tt_n4"
+      },
+      {
         "type": "header",
         "content": {
           "cs": "Základní text",
