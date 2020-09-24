@@ -180,6 +180,12 @@
   font-size: $sliderTitleFontStyle;
 }
 
+@mixin highlightsTitleFontStack {
+  font-family: $highlightsTitleFontStack;
+  font-weight: $highlightsTitleFontWeight;
+  font-size: $highlightsTitleFontStyle;
+}
+
 @mixin bodyFontItalic {
   {% if settings.type_base_italize_titles %}
     font-style: italic;
@@ -443,6 +449,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign bottom_bar_family = settings.bottom_bar_font_family -%}
 {%- assign slider_subtitle_family = settings.subtitle_family -%}
 {%- assign slider_title_family = settings.title_family -%}
+{%- assign highlights_title_family  = settings.highlights_title_family -%}
 
 {{ accent_family | font_face }}
 {{ base_family | font_face }}
@@ -450,6 +457,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ bottom_bar_family | font_face }}
 {{ slider_subtitle_family | font_face }}
 {{ slider_title_family | font_face }}
+{{ highlights_title_family | font_face }}
 
 {%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
 {%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
@@ -458,6 +466,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign bottom_bar_family_bold = bottom_bar_family | font_modify: 'weight', 'bolder' -%}
 {%- assign slider_subtitle_family_bold = slider_subtitle_family | font_modify: 'weight', 'bolder' -%}
 {%- assign slider_title_family_bold = slider_title_family | font_modify: 'weight', 'bolder' -%}
+{%- assign highlights_title_family_bold = highlights_title_family | font_modify: 'weight', 'bolder' -%}
 
 {{ base_family_bold | font_face }}
 {{ base_family_italic | font_face }}
@@ -466,6 +475,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ bottom_bar_family_bold | font_face }}
 {{ slider_subtitle_family_bold | font_face }}
 {{ slider_title_family_bold | font_face }}
+{{ highlights_title_family_bold | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -503,6 +513,12 @@ $sliderTitleFontStack: {{ slider_title_family.family }}, {{ slider_title_family.
 $sliderTitleFontWeight: {{ slider_title_family.weight }};
 $sliderTitleFontWeightBold: {{ slider_title_family_bold.weight | default: 700 }};
 $sliderTitleFontStyle: {{ slider_title_family.style }};
+
+// Highlights Title Font
+$highlightsTitleFontStack: {{ highlights_title_family.family }}, {{ highlights_title_family.fallback_families }};
+$highlightsTitleFontWeight: {{ highlights_title_family.weight }};
+$highlightsTitleFontWeightBold: {{ highlights_title_family_bold.weight | default: 700 }};
+$highlightsTitleFontStyle: {{ highlights_title_family.style }};
 
 @font-face {
   font-family: 'icons';
@@ -4873,6 +4889,9 @@ $disclosure-list-large: 1100px;
         background-color: azure;
         .heading, .subheading {
           text-transform: capitalize;
+        }
+        .heading {
+          @include highlightsTitleFontStack;
         }
         .description {
           max-width: 540px;

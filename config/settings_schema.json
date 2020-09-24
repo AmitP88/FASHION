@@ -982,6 +982,14 @@
         }
       },
       {
+        "type": "font_picker",
+        "id": "highlights_title_family",
+        "label": {
+          "en": "Title Font"
+        },
+        "default": "old_standard_tt_n4"
+      },
+      {
         "type": "header",
         "content": {
           "cs": "Základní text",
