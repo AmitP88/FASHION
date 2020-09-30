@@ -1046,6 +1046,25 @@
       {
         "type": "header",
         "content": {
+          "en": "Featured Items"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "featured_items_heading",
+        "label": {
+          "en": "Heading"
+        },
+        "default": "old_standard_tt_n4"
+      },
+
+
+
+
+
+      {
+        "type": "header",
+        "content": {
           "cs": "Základní text",
           "da": "Brødtekst",
           "de": "Fließtext",
