@@ -382,6 +382,20 @@
       {
         "type": "header",
         "content": {
+          "en": "Highlights Section"
+        }
+      },
+      {
+        "type": "color",
+        "id": "highlights_heading_color",
+        "label": {
+          "en": "Heading"
+        },
+        "default": "#E77AE0"
+      },
+      {
+        "type": "header",
+        "content": {
           "en": "Mobile Menu"
         }
       },
