@@ -394,6 +394,14 @@
         "default": "#E77AE0"
       },
       {
+        "type": "color",
+        "id": "highlights_subheading_color",
+        "label": {
+          "en": "Subheading"
+        },
+        "default": "#505050"
+      },
+      {
         "type": "header",
         "content": {
           "en": "Mobile Menu"

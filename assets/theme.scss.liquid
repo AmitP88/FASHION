@@ -382,6 +382,7 @@ $colorLinkHover: $colorPrimary;
 // Text colors
 $colorTextBody: {{ settings.color_body_text }};
 $colorHighlightHeading: {{ settings.highlights_heading_color }};
+$colorHighlightSubheading: {{ settings.highlights_subheading_color }};
 
 // Heading colors
 $colorHeadings: {{ settings.color_headings }};
@@ -4961,6 +4962,7 @@ $disclosure-list-large: 1100px;
         }
         .subheading {
           @include highlightsSubtitleFontStack;
+          color: $colorHighlightSubheading;
         }
         .description {
           max-width: 540px;
