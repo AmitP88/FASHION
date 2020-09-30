@@ -1051,7 +1051,7 @@
       },
       {
         "type": "font_picker",
-        "id": "featured_items_heading",
+        "id": "featured_items_heading_family",
         "label": {
           "en": "Heading"
         },
