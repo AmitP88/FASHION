@@ -3,7 +3,7 @@
     <h1>{{ section.settings.featured_items_heading }}</h1>
     <div class="products_container">
       {% for product in collections.featured-items.products %}
-        <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" >
+        <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
       {% endfor %}      
     </div>
   </div>
