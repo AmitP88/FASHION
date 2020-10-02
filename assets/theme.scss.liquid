@@ -5078,6 +5078,7 @@ $disclosure-list-large: 1100px;
 // --------------------------------------------------------------
 .featured-items {
   .heading {
+    margin-bottom: 40px;
     h1 {
       display: flex;
       width: 100%;
@@ -5103,17 +5104,17 @@ $disclosure-list-large: 1100px;
     }
   }
 
-  .products_container {
+
+  .featured-items {
     width: 100%;
     max-width: 1171px;
     margin: 0 auto;
-    .product {
-      width: fit-content;
+    .products_container {
+      .product {
+        margin: 0 auto;
+        width: fit-content;
+      }
     }
-
-
-
-
   }
 
 
@@ -5149,11 +5150,22 @@ $disclosure-list-large: 1100px;
             z-index: 2;
           }
         }
-
-
-
       }
     }
+
+    .featured-items {
+      .products_container {
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 30px;
+        .product {
+          margin: 0 auto;
+          width: fit-content;
+        }
+      }
+    }
+
+
   }
 
   /* --- Tablet --- */
@@ -5180,6 +5192,38 @@ $disclosure-list-large: 1100px;
         }
       }
     }
+
+    .featured-items {
+      .content {
+        display: flex;
+        justify-content: center;
+        .products_container {
+          display: grid;
+          grid-template-columns: 100%;
+          row-gap: 30px;
+          @include at-query($min, 550px) {
+            display: inline-grid;
+            grid-template-columns: auto auto;
+            gap: 15px;
+          }
+          @include at-query($min, 850px) {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+          }
+          @include at-query($min, 1100px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+          }
+          .product {
+            margin: 0 auto;
+            width: fit-content;
+          }
+        }        
+      }
+
+    }
+
+
   }
 
 
@@ -5224,4 +5268,18 @@ $disclosure-list-large: 1100px;
         }
       }
     }
+
+    .featured-items {
+      .content {
+        display: flex;
+        justify-content: center;
+        .products_container {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 15px;
+        }        
+      }
+    }
+
+
   }

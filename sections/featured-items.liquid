@@ -2,13 +2,15 @@
   <div class="heading">
     <h1>{{ section.settings.featured_items_heading }}</h1>
   </div>
-  <div class="products_container">
-    {% for product in collections.featured-items.products %}
-      <div class="product">
-        <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >          
-      </div>
-    {% endfor %}
-  </div>  
+  <div class="content">
+    <div class="products_container">
+      {% for product in collections.featured-items.products %}
+        <div class="product">
+          <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >          
+        </div>
+      {% endfor %}
+    </div>     
+  </div>
 </div>
 
 {% schema %}
