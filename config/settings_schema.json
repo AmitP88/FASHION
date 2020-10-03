@@ -1053,7 +1053,7 @@
         "type": "font_picker",
         "id": "featured_items_heading_family",
         "label": {
-          "en": "Heading"
+          "en": "Heading & Product Name"
         },
         "default": "old_standard_tt_n4"
       },
