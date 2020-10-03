@@ -5200,6 +5200,7 @@ $disclosure-list-large: 1100px;
   @media screen and (max-width: 1023px){
     .highlights {
       height: auto;
+      width: fit-content;
       .container {
         display: block;
         margin: 0;
@@ -5207,7 +5208,9 @@ $disclosure-list-large: 1100px;
           .one, .two {
             img {
               opacity: 0.7;
-              cursor: pointer;
+              width: 100%;
+              height: auto;
+              cursor: pointer;              
             }
           }
           .one .cell-text, .two .cell-text {
