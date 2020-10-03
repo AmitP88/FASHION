@@ -4997,53 +4997,21 @@ $disclosure-list-large: 1100px;
       }
     }
     .right-col {
-      .one {
+      .one, .two {
         width: 100%;
         margin: 0 auto;
         margin-bottom: 20px;
         height: auto;
         position: relative;
         background-color: #111111;
+        text-transform: uppercase;
+        @include highlightsRightButtonFontStack;
         .cell-text {
           display: none;
         }
-      }
-      .one:hover .cell-text {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #ffffff;
-        border: 2px solid #ffffff;
-        padding: 18px 35px;
-        z-index: 2;
-        text-transform: uppercase;
-        @include highlightsRightButtonFontStack;
       }
       .two {
-        width: 100%;
-        margin: 0 auto;
-        margin-bottom: 20px;
-        height: auto;
-        position: relative;
-        background-color: #111111;
-        .cell-text {
-          display: none;
-        }
-      }
-      .two:hover .cell-text {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #ffffff;
-        border: 2px solid #ffffff;
-        padding: 18px 35px;
-        z-index: 2;
-        text-transform: uppercase;
-        @include highlightsRightButtonFontStack;
+        margin-bottom: 0;
       }
     }
   }
@@ -5213,6 +5181,7 @@ $disclosure-list-large: 1100px;
               cursor: pointer;              
             }
           }
+
           .one .cell-text, .two .cell-text {
             display: block;
             position: absolute;
@@ -5258,6 +5227,36 @@ $disclosure-list-large: 1100px;
             height: auto;
             margin-left: 4%;
           }
+
+          .one:hover .cell-text {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 18px 35px;
+            z-index: 2;
+            text-transform: uppercase;
+            @include highlightsRightButtonFontStack;
+          }
+
+          .two:hover .cell-text {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 18px 35px;
+            z-index: 2;
+            text-transform: uppercase;
+            @include highlightsRightButtonFontStack;
+          }
+
+
         }
       }
     }
