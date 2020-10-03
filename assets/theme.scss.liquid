@@ -5115,6 +5115,7 @@ $disclosure-list-large: 1100px;
         width: fit-content;
         .top-half {
           background-color: #454343;
+          width: 270px;
           height: 405px;
         }
       }
@@ -5177,7 +5178,7 @@ $disclosure-list-large: 1100px;
   }
 
   /* --- Tablet --- */
-  @media screen and (min-width: 500px) and (max-width: 1199px) {
+  @media screen and (min-width: 500px) and (max-width: 1200px) {
     .highlights {
       .container {
         margin: 0;
@@ -5225,11 +5226,37 @@ $disclosure-list-large: 1100px;
           .product {
             margin: 0 auto;
             width: fit-content;
-            .top-half:hover .product_image {
-              opacity: 0.7;
-              cursor: pointer;
+            @include at-query($min, 1024px) {
+              .top-half:hover {
+                .product_image {
+                  opacity: 0.7;
+                  cursor: pointer;
+                }
+              }
+              .top-half:hover {
+                position: relative;
+                .preview_icon {
+                  position: absolute;
+                  top: 45%;
+                  left: 15%;
+                  right: 15%;
+                  margin: 0 auto;                          
+                  background-color: #030003;
+                  opacity: 0.8;
+                  width: 80px;
+                  height: 80px;
+                  border-radius: 50%;
+                  img {
+                    position: absolute;
+                    top: 35%;
+                    left: 35%;
+                  }
+                }
+              }              
             }
           }
+
+
         }        
       }
 
@@ -5289,10 +5316,33 @@ $disclosure-list-large: 1100px;
           display: grid;
           grid-template-columns: 1fr 1fr 1fr 1fr;
           gap: 30px;
-          .top-half:hover .product_image {
-            opacity: 0.7;
-            cursor: pointer;
+          .top-half:hover {
+            .product_image {
+              opacity: 0.7;
+              cursor: pointer;
+            }
           }
+          .top-half:hover {
+            position: relative;
+            .preview_icon {
+              position: absolute;
+              top: 45%;
+              left: 15%;
+              right: 15%;
+              margin: 0 auto;                          
+              background-color: #030003;
+              opacity: 0.8;
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              img {
+                position: absolute;
+                top: 35%;
+                left: 35%;
+              }
+            }
+          }
+
         }        
       }
     }
