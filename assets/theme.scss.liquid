@@ -5003,6 +5003,7 @@ $disclosure-list-large: 1100px;
         margin-bottom: 20px;
         height: auto;
         position: relative;
+        background-color: #111111;
         .cell-text {
           display: none;
         }
@@ -5026,6 +5027,7 @@ $disclosure-list-large: 1100px;
         margin-bottom: 20px;
         height: auto;
         position: relative;
+        background-color: #111111;
         .cell-text {
           display: none;
         }
@@ -5110,27 +5112,6 @@ $disclosure-list-large: 1100px;
 
   /* --- Mobile --- */
   @media screen and (max-width: 499px){
-    .highlights {
-      height: auto;
-      .container {
-        display: block;
-        margin: 0;
-        .right-col {
-          .one .cell-text, .two .cell-text {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #ffffff;
-            border: 2px solid #ffffff;
-            padding: 18px 35px;
-            z-index: 2;
-          }
-        }
-      }
-    }
-
     .featured-items {
       .content {
         .products_container {
@@ -5150,29 +5131,6 @@ $disclosure-list-large: 1100px;
 
   /* --- Tablet --- */
   @media screen and (min-width: 500px) and (max-width: 1200px) {
-    .highlights {
-      .container {
-        margin: 0;
-        .left-col {
-          width: 55%;
-        }
-        .right-col {
-          width: 45%;
-          .one {
-            width: 95%;
-            height: auto;
-            margin-left: 4%;
-            margin-bottom: 2%;
-          }
-          .two {
-            width: 95%;
-            height: auto;
-            margin-left: 4%;
-          }
-        }
-      }
-    }
-
     .featured-items {
       .content {
         display: flex;
@@ -5238,12 +5196,84 @@ $disclosure-list-large: 1100px;
 
   }
 
+  /* --- From Mobile to Tablet --- */
+  @media screen and (max-width: 1023px){
+    .highlights {
+      height: auto;
+      .container {
+        display: block;
+        margin: 0;
+        .right-col {
+          .one, .two {
+            img {
+              opacity: 0.7;
+              cursor: pointer;
+            }
+          }
+          .one .cell-text, .two .cell-text {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 18px 35px;
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+
+  /* --- Laptop --- */
+  @media screen and (min-width: 1024px){
+    .highlights {
+      .container {
+        margin: 0;
+        .left-col {
+          width: 55%;
+        }
+        .right-col {
+          width: 45%;
+          @include at-query($min, 1024px) {
+            .one:hover, .two:hover {
+              img {
+                opacity: 0.7;
+                cursor: pointer;
+              }
+            }
+          }
+          .one {
+            width: 95%;
+            height: auto;
+            margin-left: 4%;
+            margin-bottom: 2%;
+          }
+          .two {
+            width: 95%;
+            height: auto;
+            margin-left: 4%;
+          }
+        }
+      }
+    }
+  }
+
 
   /* --- Desktop --- */
   @media screen and (min-width: 1200px){
     .highlights {
       .container {
         margin: 0;
+        .right-col {
+          .one:hover, .two:hover {
+            img {
+              opacity: 0.7;
+              cursor: pointer;
+            }
+          }
+        }
         .left-col {
           width: fit-content;
           .one {
