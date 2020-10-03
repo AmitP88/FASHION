@@ -5077,9 +5077,9 @@ $disclosure-list-large: 1100px;
 // Featured Items Section
 // --------------------------------------------------------------
 .featured-items {
-  .heading {
+  .heading_container {
     margin-bottom: 40px;
-    h1 {
+    .heading {
       display: flex;
       width: 100%;
       max-width: 1171px;
@@ -5090,17 +5090,17 @@ $disclosure-list-large: 1100px;
       @include featuredItemsHeadingFontStack;      
     }
   
-    h1:before,
-    h1:after {
-        content: '';
-        border: 1px solid #cdcdcd;
-        height: 3px;
-        margin: 0 20px 0 0;
-        flex: 1 0 20px;
+    .heading:before,
+    .heading:after {
+      content: '';
+      border: 1px solid #cdcdcd;
+      height: 3px;
+      margin: 0 20px 0 0;
+      flex: 1 0 20px;
     }
     
-    h1:after {
-        margin: 0 0 0 20px;
+    .heading:after {
+      margin: 0 0 0 20px;
     }
   }
 
