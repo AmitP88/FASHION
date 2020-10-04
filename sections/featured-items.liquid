@@ -12,7 +12,7 @@
             </div>
             {% if product.compare_at_price > product.price %}
               <div class="discount">
-                <p class="percent_off">20% off</p>
+                <p class="percent_off">{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}% off</p>
               </div>            
             {% endif %}
             <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
