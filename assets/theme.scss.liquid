@@ -5078,6 +5078,27 @@ $disclosure-list-large: 1100px;
               @include featuredItemsHeadingFontStack;
             }
           }
+          .discount {
+            position: absolute;
+            top: 27px;
+            left: 15px;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background-color: #e13ed7;
+            z-index: 1;
+            .percent_off {
+              position: absolute;
+              top: 22%;
+              left: 25%;
+              max-width: 32px;
+              text-align: center;
+              line-height: normal;
+              margin-bottom: 0;
+              text-transform: uppercase;
+              color: #ffffff;
+            }
+          }
           .preview_icon {
             display: none;
           }
@@ -5151,6 +5172,9 @@ $disclosure-list-large: 1100px;
               }
               .top-half:hover {
                 position: relative;
+                .discount {
+                  display: none;
+                }
                 .preview_icon {
                   display: inherit;
                   position: absolute;
@@ -5342,13 +5366,14 @@ $disclosure-list-large: 1100px;
           grid-template-columns: 1fr 1fr 1fr 1fr;
           gap: 30px;
           .top-half:hover {
+            position: relative;
+            .discount {
+              display: none;
+            }
             .product_image {
               opacity: 0.7;
               cursor: pointer;
             }
-          }
-          .top-half:hover {
-            position: relative;
             .preview_icon {
               display: inherit;
               position: absolute;
