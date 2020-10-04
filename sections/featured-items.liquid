@@ -8,7 +8,7 @@
         <div class="product">
           <div class="top-half">
             <div class="price">
-              <p class="price_text">price</p>
+              <p class="price_text">{{ product.price | money }}</p>
             </div>
             <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
             <div class="preview_icon">
