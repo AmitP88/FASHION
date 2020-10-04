@@ -4990,7 +4990,7 @@ $disclosure-list-large: 1100px;
           width: 147px;
           height: 43px;
           text-align: center;
-          line-height: 38px;
+          line-height: 45px;
           color: #7b797b;
           @include highlightsLeftButtonFontStack;
         }
@@ -5108,6 +5108,13 @@ $disclosure-list-large: 1100px;
           margin-top: 10px;
           .name {
             @include featuredItemsHeadingFontStack;
+            margin-bottom: 0;
+          }
+          .buttons_container {
+            display: flex;
+            .button {
+              margin-right: 10px;
+            }
           }
         }
       }
