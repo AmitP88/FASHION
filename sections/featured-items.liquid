@@ -7,6 +7,9 @@
       {% for product in collections.featured-items.products %}
         <div class="product">
           <div class="top-half">
+            <div class="price">
+              <p class="price_text">price</p>
+            </div>
             <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
             <div class="preview_icon">
               <img src="https://cdn.shopify.com/s/files/1/0459/7501/1480/files/eye_icon_bc0fd2f0-fd06-48ac-a5c6-aa39133712b7.png?v=1601692737" alt="preview_icon">
