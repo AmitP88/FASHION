@@ -22,7 +22,9 @@
           </div>
           <div class="bottom-half">
             <h1 class="name">{{ product.title }}</h1>
-            <div class="review">review stars</div>
+            <div class="review">
+              <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+            </div>
             <div class="buttons_container">
               <div class="wishlist button">
                 {% include 'swym-product-view', product: product %}
