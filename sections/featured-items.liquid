@@ -25,7 +25,8 @@
             <div class="review">review stars</div>
             <div class="buttons_container">
               <div class="wishlist button">
-
+                {% include 'swym-product-view', product: product %}
+                <button class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}"></button>
               </div>
               <div class="cart button">
                 <span class="icon icon-cart" aria-hidden="true"></span>
