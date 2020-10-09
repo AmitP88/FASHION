@@ -1,4 +1,19 @@
-<div class="promo"></div>
+{%- style -%}
+  {%- assign promo_1_image = section.settings.promo_image1 -%}
+  {%- assign promo_2_image = section.settings.promo_image2 -%}
+
+  .one {
+    background-image: url('{{ promo_1_image | file_url }}');
+    height: 395px;
+    width: 50%;
+  }
+
+{%- endstyle -%}
+
+<div class="promo">
+  <div class="one"></div>
+  <div class="two"></div>
+</div>
 
 {% schema %}
   {
