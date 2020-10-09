@@ -1,0 +1,61 @@
+<div class="promo"></div>
+
+{% schema %}
+  {
+    "name": "Promo",
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "en": "Promo 1 (left)"
+        }
+      },
+      {
+        "id": "promo_image1",
+        "type": "image_picker",
+        "label": "Promo 1 Image"
+      },
+      {
+        "id": "promo1_heading",
+        "type": "text",
+        "label": "Promo 1 Heading",
+        "default": "70%"
+      },
+      {
+        "id": "promo1_subheading",
+        "type": "text",
+        "label": "Promo 1 Subheading",
+        "default": "Tao Kinben Na?"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Promo 2 (right)"
+        }
+      },
+      {
+        "id": "promo_image2",
+        "type": "image_picker",
+        "label": "Promo 2 Image"
+      },
+      {
+        "id": "promo2_heading",
+        "type": "text",
+        "label": "Promo 2 Heading",
+        "default": "Amr Chehara Kharap Na"
+      },
+      {
+        "id": "promo2_subheading",
+        "type": "text",
+        "label": "Promo 2 Subheading",
+        "default": "Chehara Dia ki hoy"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Promo",
+        "category": "Promo section"
+      }
+    ]
+  }
+{% endschema %}
