@@ -5216,6 +5216,33 @@ $disclosure-list-large: 1100px;
     .triangle {
       display: none;
     }
+    .text {
+      .top {
+        h1 {
+          position: absolute;
+          top: 30%;
+          right: 30%;
+          z-index: 3;
+
+        }
+
+        span {
+          position: absolute;
+          top: 32.5%;
+          right: 26%;
+          z-index: 3;
+          transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);	 /*  for IE  */
+    
+          /* 	for browsers supporting webkit (such as chrome, firefox, safari etc.). */
+          -webkit-transform: rotate(-90deg);
+          display: inline-block;
+          text-transform: uppercase;
+        }
+
+
+      }
+    }
   }
 }
 
