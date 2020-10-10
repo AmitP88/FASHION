@@ -5218,32 +5218,43 @@ $disclosure-list-large: 1100px;
     }
     .text {
       .top {
+          position: absolute;
+          top: 30%;
+          right: 14%;
+          z-index: 3;
+          color: #ffffff;
+          display: flex;             
         h1 {
-          position: absolute;
-          top: 25%;
-          right: 20%;
-          z-index: 3;
-          color: #ffffff;
-          font-size: 80px;
+          font-size: 75px;
           font-weight: bold;
-        }
-
-        span {
-          position: absolute;
-          top: 32.5%;
-          right: 13%;
-          z-index: 3;
           color: #ffffff;
+        }
+        span {
           transform: rotate(-90deg);
           -ms-transform: rotate(-90deg);
           -webkit-transform: rotate(-90deg);
           display: inline-block;
           text-transform: uppercase;
           font-size: 35px;
+          margin-bottom: 40px;
+          margin-left: 15px;
         }
-
-
       }
+
+      .bottom {
+        position: absolute;
+        top: 55%;
+        right: 15%;
+        z-index: 3;
+        h2 {
+          color: #ffffff;
+          font-size: xx-large;
+        }
+      }
+
+
+
+
     }
   }
 }
