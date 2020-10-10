@@ -5200,15 +5200,15 @@ $disclosure-list-large: 1100px;
 // Promo Section
 // --------------------------------------------------------------
 .promo {
-  display: flex;
+  // display: flex;
   margin: 90px 0;
   .one {
     background-color: red;
+    width: 100%;
   }
   .two {
     background-color: blue;
-    width: 50%;
-    height: 395px;
+    width: 100%;
   }
 }
 
@@ -5239,6 +5239,13 @@ $disclosure-list-large: 1100px;
 
 
   }
+
+
+
+
+
+
+
 
   /* --- Tablet --- */
   @media screen and (min-width: 500px) and (max-width: 1200px) {
@@ -5307,6 +5314,7 @@ $disclosure-list-large: 1100px;
       }
 
     }
+
 
 
   }
@@ -5504,4 +5512,16 @@ $disclosure-list-large: 1100px;
     }
 
 
+  }
+
+  @media screen and (min-width: 1390px){
+    .promo {
+      display: flex;
+      .one {
+        width: 50%;
+      }
+      .two {
+        width: 50%;
+      }
+    }
   }

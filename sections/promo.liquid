@@ -2,10 +2,16 @@
   {%- assign promo_1_image = section.settings.promo_image1 -%}
   {%- assign promo_2_image = section.settings.promo_image2 -%}
 
-  .one {
-    background-image: url('{{ promo_1_image | file_url }}');
+  .promo > .one {
+    background-image: url('{{ promo_1_image | img_url: '695x395' }}');
     height: 395px;
-    width: 50%;
+    background-size: cover;
+  }
+
+  .promo > .two {
+    background-image: url('{{ promo_2_image | img_url: '695x395' }}');
+    height: 395px;
+    background-size: cover;
   }
 
 {%- endstyle -%}
