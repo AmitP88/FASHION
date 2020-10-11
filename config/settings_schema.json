@@ -952,7 +952,7 @@
         "label": {
           "en": "Description Font"
         },
-        "default": "old_standard_tt_n4"
+        "default": "open_sans_n4"
       },
       {
         "type": "font_picker",
