@@ -171,12 +171,6 @@
 }
 
 
-@mixin highlightsSubtitleFontStack {
-  font-family: $highlightsSubtitleFontStack;
-  font-weight: $highlightsSubtitleFontWeight;
-  font-size: $highlightsSubtitleFontStyle;
-}
-
 @mixin highlightsDescriptionFontStack {
   font-family: $highlightsDescriptionFontStack;
   font-weight: $highlightsDescriptionFontWeight;
@@ -464,7 +458,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign header_family = settings.type_header_family -%}
 {%- assign bottom_bar_family = settings.bottom_bar_font_family -%}
 {%- assign highlights_title_family  = settings.highlights_title_family -%}
-{%- assign highlights_subtitle_family  = settings.highlights_subtitle_family -%}
 {%- assign highlights_description_family  = settings.highlights_description_family -%}
 {%- assign highlights_left_button_family  = settings.highlights_left_button_family -%}
 {%- assign highlights_right_button_family  = settings.highlights_right_button_family -%}
@@ -475,7 +468,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ header_family | font_face }}
 {{ bottom_bar_family | font_face }}
 {{ highlights_title_family | font_face }}
-{{ highlights_subtitle_family | font_face }}
 {{ highlights_description_family | font_face }}
 {{ highlights_left_button_family | font_face }}
 {{ highlights_right_button_family | font_face }}
@@ -487,7 +479,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
 {%- assign bottom_bar_family_bold = bottom_bar_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_title_family_bold = highlights_title_family | font_modify: 'weight', 'bolder' -%}
-{%- assign highlights_subtitle_family_bold = highlights_subtitle_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_left_button_family_bold = highlights_left_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
@@ -499,7 +490,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ accent_family_bold | font_face }}
 {{ bottom_bar_family_bold | font_face }}
 {{ highlights_title_family_bold | font_face }}
-{{ highlights_subtitle_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
 {{ highlights_left_button_family_bold | font_face }}
 {{ highlights_right_button_family_bold | font_face }}
@@ -524,12 +514,6 @@ $accentFontWeight: {{ accent_family.weight }};
 $accentFontWeightBold: {{ accent_family_bold.weight | default: 700 }};
 $accentFontStyle: {{ accent_family.style }};
 
-
-// Highlights Subtitle Font
-$highlightsSubtitleFontStack: {{ highlights_subtitle_family.family }}, {{ highlights_subtitle_family.fallback_families }};
-$highlightsSubtitleFontWeight: {{ highlights_subtitle_family.weight }};
-$highlightsSubtitleFontWeightBold: {{ highlights_subtitle_family_bold.weight | default: 700 }};
-$highlightsSubtitleFontStyle: {{ highlights_subtitle_family.style }};
 
 // Highlights Description Font
 $highlightsDescriptionFontStack: {{ highlights_description_family.family }}, {{ highlights_description_family.fallback_families }};
@@ -594,6 +578,13 @@ $socialIconFontStack: 'icons';
   font-family: "Encode Sans Narrow Regular";
   src: url("EncodeSansNarrow-Regular.woff2") format("woff2"),
        url("EncodeSansNarrow-Regular.woff") format("woff");
+};
+
+// Encode Sans Narrow - SemiBold
+@font-face {
+  font-family: "Encode Sans Narrow SemiBold";
+  src: url("EncodeSansNarrow-SemiBold.woff2") format("woff2"),
+       url("EncodeSansNarrow-SemiBold.woff") format("woff");
 };
 
 /*================ Global | Normalize ================*/

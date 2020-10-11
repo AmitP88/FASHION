@@ -163,12 +163,6 @@
 }
 
 
-@mixin highlightsSubtitleFontStack {
-  font-family: $highlightsSubtitleFontStack;
-  font-weight: $highlightsSubtitleFontWeight;
-  font-size: $highlightsSubtitleFontStyle;
-}
-
 @mixin highlightsDescriptionFontStack {
   font-family: $highlightsDescriptionFontStack;
   font-weight: $highlightsDescriptionFontWeight;
@@ -455,7 +449,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign accent_family = settings.type_accent_family -%}
 {%- assign base_family = settings.type_base_family -%}
 {%- assign header_family = settings.type_header_family -%}
-{%- assign highlights_subtitle_family  = settings.highlights_subtitle_family -%}
 {%- assign highlights_description_family  = settings.highlights_description_family -%}
 {%- assign highlights_left_button_family  = settings.highlights_left_button_family -%}
 {%- assign highlights_right_button_family  = settings.highlights_right_button_family -%}
@@ -464,7 +457,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ accent_family | font_face }}
 {{ base_family | font_face }}
 {{ header_family | font_face }}
-{{ highlights_subtitle_family | font_face }}
 {{ highlights_description_family | font_face }}
 {{ highlights_left_button_family | font_face }}
 {{ highlights_right_button_family | font_face }}
@@ -474,7 +466,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
 {%- assign base_family_bold_italic = base_family_bold | font_modify: 'style', 'italic' -%}
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
-{%- assign highlights_subtitle_family_bold = highlights_subtitle_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_left_button_family_bold = highlights_left_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
@@ -484,7 +475,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ base_family_italic | font_face }}
 {{ base_family_bold_italic | font_face }}
 {{ accent_family_bold | font_face }}
-{{ highlights_subtitle_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
 {{ highlights_left_button_family_bold | font_face }}
 {{ highlights_right_button_family_bold | font_face }}
@@ -509,12 +499,6 @@ $accentFontWeight: {{ accent_family.weight }};
 $accentFontWeightBold: {{ accent_family_bold.weight | default: 700 }};
 $accentFontStyle: {{ accent_family.style }};
 
-
-// Highlights Subtitle Font
-$highlightsSubtitleFontStack: {{ highlights_subtitle_family.family }}, {{ highlights_subtitle_family.fallback_families }};
-$highlightsSubtitleFontWeight: {{ highlights_subtitle_family.weight }};
-$highlightsSubtitleFontWeightBold: {{ highlights_subtitle_family_bold.weight | default: 700 }};
-$highlightsSubtitleFontStyle: {{ highlights_subtitle_family.style }};
 
 // Highlights Description Font
 $highlightsDescriptionFontStack: {{ highlights_description_family.family }}, {{ highlights_description_family.fallback_families }};
@@ -579,6 +563,13 @@ $socialIconFontStack: 'icons';
   font-family: "Encode Sans Narrow Regular";
   src: url("EncodeSansNarrow-Regular.woff2") format("woff2"),
        url("EncodeSansNarrow-Regular.woff") format("woff");
+};
+
+// Encode Sans Narrow - SemiBold
+@font-face {
+  font-family: "Encode Sans Narrow SemiBold";
+  src: url("EncodeSansNarrow-SemiBold.woff2") format("woff2"),
+       url("EncodeSansNarrow-SemiBold.woff") format("woff");
 };
 
 
@@ -4958,9 +4949,11 @@ $disclosure-list-large: 1100px;
           color: $colorHighlightHeading;
           font-size: 24px;
           letter-spacing: 9px;
+          margin: 0;
         }
         .subheading {
-          @include highlightsSubtitleFontStack;
+          font-family: "Encode Sans Narrow SemiBold";
+          font-size: 40px;
           color: $colorHighlightSubheading;
         }
         .description {
