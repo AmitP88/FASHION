@@ -360,6 +360,7 @@ $colorLinkHover: $colorPrimary;
 $colorTextBody: {{ settings.color_body_text }};
 $colorHighlightHeading: {{ settings.highlights_heading_color }};
 $colorHighlightSubheading: {{ settings.highlights_subheading_color }};
+$colorHighlightDescription: {{ settings.highlights_description_color }};
 
 // Heading colors
 $colorHeadings: {{ settings.color_headings }};
@@ -4959,6 +4960,7 @@ $disclosure-list-large: 1100px;
         .description {
           max-width: 540px;
           font-size: 16px;
+          color: $colorHighlightDescription;
           @include highlightsDescriptionFontStack;
         }
         a > .button {

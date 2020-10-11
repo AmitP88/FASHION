@@ -402,6 +402,14 @@
         "default": "#505050"
       },
       {
+        "type": "color",
+        "id": "highlights_description_color",
+        "label": {
+          "en": "Description"
+        },
+        "default": "#7b797b"
+      },
+      {
         "type": "header",
         "content": {
           "en": "Mobile Menu"
