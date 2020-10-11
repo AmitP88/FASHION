@@ -171,12 +171,6 @@
 }
 
 
-@mixin highlightsTitleFontStack {
-  font-family: $highlightsTitleFontStack;
-  font-weight: $highlightsTitleFontWeight;
-  font-size: $highlightsTitleFontStyle;
-}
-
 @mixin highlightsSubtitleFontStack {
   font-family: $highlightsSubtitleFontStack;
   font-weight: $highlightsSubtitleFontWeight;
@@ -530,12 +524,6 @@ $accentFontWeight: {{ accent_family.weight }};
 $accentFontWeightBold: {{ accent_family_bold.weight | default: 700 }};
 $accentFontStyle: {{ accent_family.style }};
 
-
-// Highlights Title Font
-$highlightsTitleFontStack: {{ highlights_title_family.family }}, {{ highlights_title_family.fallback_families }};
-$highlightsTitleFontWeight: {{ highlights_title_family.weight }};
-$highlightsTitleFontWeightBold: {{ highlights_title_family_bold.weight | default: 700 }};
-$highlightsTitleFontStyle: {{ highlights_title_family.style }};
 
 // Highlights Subtitle Font
 $highlightsSubtitleFontStack: {{ highlights_subtitle_family.family }}, {{ highlights_subtitle_family.fallback_families }};
