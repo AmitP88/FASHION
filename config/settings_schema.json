@@ -978,28 +978,6 @@
       {
         "type": "header",
         "content": {
-          "en": "Slider"
-        }
-      },
-      {
-        "type": "font_picker",
-        "id": "subtitle_family",
-        "label": {
-          "en": "Subtitle Font"
-        },
-        "default": "old_standard_tt_n4"
-      },
-      {
-        "type": "font_picker",
-        "id": "title_family",
-        "label": {
-          "en": "Title Font"
-        },
-        "default": "old_standard_tt_n4"
-      },
-      {
-        "type": "header",
-        "content": {
           "en": "Highlights Section"
         }
       },

@@ -176,18 +176,6 @@
   font-size: $bottomBarFontStyle;
 }
 
-@mixin sliderSubtitleFontStack {
-  font-family: $sliderSubtitleFontStack;
-  font-weight: $sliderSubtitleFontWeight;
-  font-size: $sliderSubtitleFontStyle;
-}
-
-@mixin sliderTitleFontStack {
-  font-family: $sliderTitleFontStack;
-  font-weight: $sliderTitleFontWeight;
-  font-size: $sliderTitleFontStyle;
-}
-
 @mixin highlightsTitleFontStack {
   font-family: $highlightsTitleFontStack;
   font-weight: $highlightsTitleFontWeight;
@@ -486,8 +474,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign base_family = settings.type_base_family -%}
 {%- assign header_family = settings.type_header_family -%}
 {%- assign bottom_bar_family = settings.bottom_bar_font_family -%}
-{%- assign slider_subtitle_family = settings.subtitle_family -%}
-{%- assign slider_title_family = settings.title_family -%}
 {%- assign highlights_title_family  = settings.highlights_title_family -%}
 {%- assign highlights_subtitle_family  = settings.highlights_subtitle_family -%}
 {%- assign highlights_description_family  = settings.highlights_description_family -%}
@@ -499,8 +485,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ base_family | font_face }}
 {{ header_family | font_face }}
 {{ bottom_bar_family | font_face }}
-{{ slider_subtitle_family | font_face }}
-{{ slider_title_family | font_face }}
 {{ highlights_title_family | font_face }}
 {{ highlights_subtitle_family | font_face }}
 {{ highlights_description_family | font_face }}
@@ -513,8 +497,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign base_family_bold_italic = base_family_bold | font_modify: 'style', 'italic' -%}
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
 {%- assign bottom_bar_family_bold = bottom_bar_family | font_modify: 'weight', 'bolder' -%}
-{%- assign slider_subtitle_family_bold = slider_subtitle_family | font_modify: 'weight', 'bolder' -%}
-{%- assign slider_title_family_bold = slider_title_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_title_family_bold = highlights_title_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_subtitle_family_bold = highlights_subtitle_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
@@ -527,8 +509,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ base_family_bold_italic | font_face }}
 {{ accent_family_bold | font_face }}
 {{ bottom_bar_family_bold | font_face }}
-{{ slider_subtitle_family_bold | font_face }}
-{{ slider_title_family_bold | font_face }}
 {{ highlights_title_family_bold | font_face }}
 {{ highlights_subtitle_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
@@ -560,18 +540,6 @@ $bottomBarFontStack: {{ bottom_bar_family.family }}, {{ bottom_bar_family.fallba
 $bottomBarFontWeight: {{ bottom_bar_family.weight }};
 $bottomBarFontWeightBold: {{ bottom_bar_family_bold.weight | default: 700 }};
 $bottomBarFontStyle: {{ bottom_bar_family.style }};
-
-// Slider Subtitle Font
-$sliderSubtitleFontStack: {{ slider_subtitle_family.family }}, {{ slider_subtitle_family.fallback_families }};
-$sliderSubtitleFontWeight: {{ slider_subtitle_family.weight }};
-$sliderSubtitleFontWeightBold: {{ slider_subtitle_family_bold.weight | default: 700 }};
-$sliderSubtitleFontStyle: {{ slider_subtitle_family.style }};
-
-// Slider Title Font
-$sliderTitleFontStack: {{ slider_title_family.family }}, {{ slider_title_family.fallback_families }};
-$sliderTitleFontWeight: {{ slider_title_family.weight }};
-$sliderTitleFontWeightBold: {{ slider_title_family_bold.weight | default: 700 }};
-$sliderTitleFontStyle: {{ slider_title_family.style }};
 
 // Highlights Title Font
 $highlightsTitleFontStack: {{ highlights_title_family.family }}, {{ highlights_title_family.fallback_families }};
