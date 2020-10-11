@@ -976,7 +976,7 @@
         "label": {
           "en": "Right Button Font"
         },
-        "default": "old_standard_tt_n4"
+        "default": "open_sans_n6"
       },
       {
         "type": "header",
