@@ -584,6 +584,15 @@ $featuredItemsHeadingFontStyle: {{ featured_items_heading_family.style }};
 $socialIconFontStack: 'icons';
 
 
+// Slider Subtitle Font
+@font-face {
+  font-family: "Aleo";
+  src: url("Aleo-Regular.woff2") format("woff2"),
+       url("Aleo-Regular.woff") format("woff");
+};
+
+
+
 /*================ Vendor-specific styles ================*/
 /* Magnific Popup CSS */
 .mfp-bg {
@@ -2430,6 +2439,8 @@ $slideshow-indicator-size: 1.25rem;
 
   .hero__subtitle {
     margin-bottom: 0.94rem;
+    font-family: "Aleo" !important;
+    font-size: 24px !important;
   }
 
   a.hero__cta {
@@ -2445,7 +2456,10 @@ $slideshow-indicator-size: 1.25rem;
   }
 
   .hero__subtitle {
-    font-size: em(15px);
+    font-size: em(24px);
+    font-family: "Aleo" !important;
+    text-transform: uppercase;
+    letter-spacing: 9px;
   }
 
   @include at-query($min, $postSmall) {
@@ -2455,6 +2469,7 @@ $slideshow-indicator-size: 1.25rem;
 
     .hero__subtitle {
       font-size: em(18px);
+      font-family: "Aleo" !important;
     }
   }
 
