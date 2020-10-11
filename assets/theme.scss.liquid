@@ -591,6 +591,12 @@ $socialIconFontStack: 'icons';
        url("Aleo-Regular.woff") format("woff");
 };
 
+// Slider Title Font
+@font-face {
+  font-family: "Encode Sans Narrow Bold";
+  src: url("EncodeSansNarrow-Bold.woff2") format("woff2"),
+       url("EncodeSansNarrow-Bold.woff") format("woff");
+};
 
 
 /*================ Vendor-specific styles ================*/
@@ -2435,6 +2441,9 @@ $slideshow-indicator-size: 1.25rem;
     margin-bottom: 1.25rem;
     line-height: 1.25;
     letter-spacing: 0;
+    font-family: "Encode Sans Narrow Bold" !important;
+    font-size: 56px !important;
+    text-transform: capitalize;
   }
 
   .hero__subtitle {
@@ -2452,19 +2461,23 @@ $slideshow-indicator-size: 1.25rem;
 .hero__slide,
 .hero--adapt {
   .hero__title {
-    font-size: em(50px);
+    font-size: em(56px);
+    font-family: "Encode Sans Narrow Bold";
+    text-transform: capitalize;
   }
 
   .hero__subtitle {
     font-size: em(24px);
     font-family: "Aleo" !important;
     text-transform: uppercase;
-    letter-spacing: 9px;
+    letter-spacing: 8px;
   }
 
   @include at-query($min, $postSmall) {
     .hero__title {
       font-size: em(60px);
+      font-family: "Encode Sans Narrow Bold";
+      text-transform: capitalize;
     }
 
     .hero__subtitle {
@@ -2475,7 +2488,9 @@ $slideshow-indicator-size: 1.25rem;
 
   @include at-query($min, $large) {
     .hero__title {
-      font-size: em(64px);
+      font-size: em(56px);
+      font-family: "Encode Sans Narrow Bold";
+      text-transform: capitalize;
     }
   }
 }
