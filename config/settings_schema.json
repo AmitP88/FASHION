@@ -984,14 +984,7 @@
           "en": "Featured Items"
         }
       },
-      {
-        "type": "font_picker",
-        "id": "featured_items_heading_family",
-        "label": {
-          "en": "Heading, Product Name, and Price"
-        },
-        "default": "old_standard_tt_n4"
-      },
+
 
 
 
