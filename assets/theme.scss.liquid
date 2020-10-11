@@ -162,11 +162,6 @@
   {% endif %}
 }
 
-@mixin bottomBarFontStack {
-  font-family: $bottomBarFontStack;
-  font-weight: $bottomBarFontWeight;
-  font-size: $bottomBarFontStyle;
-}
 
 @mixin highlightsTitleFontStack {
   font-family: $highlightsTitleFontStack;
@@ -466,7 +461,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign accent_family = settings.type_accent_family -%}
 {%- assign base_family = settings.type_base_family -%}
 {%- assign header_family = settings.type_header_family -%}
-{%- assign bottom_bar_family = settings.bottom_bar_font_family -%}
 {%- assign highlights_title_family  = settings.highlights_title_family -%}
 {%- assign highlights_subtitle_family  = settings.highlights_subtitle_family -%}
 {%- assign highlights_description_family  = settings.highlights_description_family -%}
@@ -477,7 +471,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ accent_family | font_face }}
 {{ base_family | font_face }}
 {{ header_family | font_face }}
-{{ bottom_bar_family | font_face }}
 {{ highlights_title_family | font_face }}
 {{ highlights_subtitle_family | font_face }}
 {{ highlights_description_family | font_face }}
@@ -489,7 +482,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
 {%- assign base_family_bold_italic = base_family_bold | font_modify: 'style', 'italic' -%}
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
-{%- assign bottom_bar_family_bold = bottom_bar_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_title_family_bold = highlights_title_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_subtitle_family_bold = highlights_subtitle_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
@@ -501,7 +493,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ base_family_italic | font_face }}
 {{ base_family_bold_italic | font_face }}
 {{ accent_family_bold | font_face }}
-{{ bottom_bar_family_bold | font_face }}
 {{ highlights_title_family_bold | font_face }}
 {{ highlights_subtitle_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
@@ -528,11 +519,6 @@ $accentFontWeight: {{ accent_family.weight }};
 $accentFontWeightBold: {{ accent_family_bold.weight | default: 700 }};
 $accentFontStyle: {{ accent_family.style }};
 
-// Bottom Bar Font
-$bottomBarFontStack: {{ bottom_bar_family.family }}, {{ bottom_bar_family.fallback_families }};
-$bottomBarFontWeight: {{ bottom_bar_family.weight }};
-$bottomBarFontWeightBold: {{ bottom_bar_family_bold.weight | default: 700 }};
-$bottomBarFontStyle: {{ bottom_bar_family.style }};
 
 // Highlights Title Font
 $highlightsTitleFontStack: {{ highlights_title_family.family }}, {{ highlights_title_family.fallback_families }};
@@ -3028,7 +3014,7 @@ $slick-dot-character: '\2022';
 }
 
 #AccessibleNav > .site-nav__item > .site-nav__link {
-  @include bottomBarFontStack;
+
 }
 
 .top-nav {

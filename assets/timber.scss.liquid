@@ -170,11 +170,6 @@
   {% endif %}
 }
 
-@mixin bottomBarFontStack {
-  font-family: $bottomBarFontStack;
-  font-weight: $bottomBarFontWeight;
-  font-size: $bottomBarFontStyle;
-}
 
 @mixin highlightsTitleFontStack {
   font-family: $highlightsTitleFontStack;
@@ -535,11 +530,6 @@ $accentFontWeight: {{ accent_family.weight }};
 $accentFontWeightBold: {{ accent_family_bold.weight | default: 700 }};
 $accentFontStyle: {{ accent_family.style }};
 
-// Bottom Bar Font
-$bottomBarFontStack: {{ bottom_bar_family.family }}, {{ bottom_bar_family.fallback_families }};
-$bottomBarFontWeight: {{ bottom_bar_family.weight }};
-$bottomBarFontWeightBold: {{ bottom_bar_family_bold.weight | default: 700 }};
-$bottomBarFontStyle: {{ bottom_bar_family.style }};
 
 // Highlights Title Font
 $highlightsTitleFontStack: {{ highlights_title_family.family }}, {{ highlights_title_family.fallback_families }};
@@ -2713,7 +2703,7 @@ $socialIconFontStack: 'icons';
 }
 
 #AccessibleNav > .site-nav__item > .site-nav__link {
-  @include bottomBarFontStack;
+
 }
 
 .site-nav__item {
@@ -2844,7 +2834,7 @@ $socialIconFontStack: 'icons';
   padding-left: 25px;
 
   a {
-    @include bottomBarFontStack;
+
   }
 
   li {
@@ -2852,7 +2842,7 @@ $socialIconFontStack: 'icons';
     list-style: none;
     height: 25px;
     a {
-      @include bottomBarFontStack;
+
       padding: 0;      
     }
   }
