@@ -44,6 +44,9 @@
       {% endfor %}
     </div>     
   </div>
+  <a href="{{ section.settings.load_more_button_url }}">
+    <div class="button">{{ section.settings.load_more_button_text }}</div>
+  </a>
 </div>
 
 {% schema %}
@@ -61,7 +64,18 @@
         "default": {
           "en": "Trending Items"
         }
-      }
+      },
+      {
+        "id": "load_more_button_url",
+        "type": "url",
+        "label": "Load More Button URL"
+      },
+      {
+        "id": "load_more_button_text",
+        "type": "text",
+        "label": "Load More Button Text",
+        "default": "Load More"
+      },
     ],
     "presets": [
       {

@@ -5012,7 +5012,7 @@ $disclosure-list-large: 1100px;
 
 
 // --------------------------------------------------------------
-// Featured Items Section
+// Featured Items/ Trending Items Section
 // --------------------------------------------------------------
 .featured-items, .trending-items {
   width: 100%;
@@ -5188,11 +5188,21 @@ $disclosure-list-large: 1100px;
   }
 
 
-
-
 }
 
-
+.trending-items {
+  a > .button {
+    width: fit-content;
+    border: 1px solid #898989;
+    width: 147px;
+    height: 43px;
+    text-align: center;
+    line-height: 40px;
+    color: #7b797b;
+    @include highlightsLeftButtonFontStack;
+    font-size: 16px;
+  }  
+}
 
 
 
