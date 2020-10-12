@@ -412,6 +412,12 @@
       {
         "type": "header",
         "content": {
+          "en": "Featured Items"
+        }
+      },
+      {
+        "type": "header",
+        "content": {
           "en": "Mobile Menu"
         }
       },
