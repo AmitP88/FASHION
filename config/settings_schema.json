@@ -990,7 +990,14 @@
           "en": "Featured Items"
         }
       },
-
+      {
+        "type": "font_picker",
+        "id": "product_price_and_discount_family",
+        "label": {
+          "en": "Product price and discount"
+        },
+        "default": "open_sans_n6"
+      },
 
 
 

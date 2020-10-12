@@ -451,40 +451,36 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign accent_family = settings.type_accent_family -%}
 {%- assign base_family = settings.type_base_family -%}
 {%- assign header_family = settings.type_header_family -%}
-{%- assign bottom_bar_family = settings.bottom_bar_font_family -%}
-{%- assign highlights_title_family  = settings.highlights_title_family -%}
 {%- assign highlights_description_family  = settings.highlights_description_family -%}
 {%- assign highlights_left_button_family  = settings.highlights_left_button_family -%}
 {%- assign highlights_right_button_family  = settings.highlights_right_button_family -%}
+{%- assign product_price_and_discount_family = settings.product_price_and_discount_family -%}
 
 {{ accent_family | font_face }}
 {{ base_family | font_face }}
 {{ header_family | font_face }}
-{{ bottom_bar_family | font_face }}
-{{ highlights_title_family | font_face }}
 {{ highlights_description_family | font_face }}
 {{ highlights_left_button_family | font_face }}
 {{ highlights_right_button_family | font_face }}
+{{ product_price_and_discount_family | font_face }}
 
 {%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
 {%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
 {%- assign base_family_bold_italic = base_family_bold | font_modify: 'style', 'italic' -%}
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
-{%- assign bottom_bar_family_bold = bottom_bar_family | font_modify: 'weight', 'bolder' -%}
-{%- assign highlights_title_family_bold = highlights_title_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_left_button_family_bold = highlights_left_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
+{%- assign product_price_and_discount_family_bold = product_price_and_discount_family | font_modify: 'weight', 'bolder' -%}
 
 {{ base_family_bold | font_face }}
 {{ base_family_italic | font_face }}
 {{ base_family_bold_italic | font_face }}
 {{ accent_family_bold | font_face }}
-{{ bottom_bar_family_bold | font_face }}
-{{ highlights_title_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
 {{ highlights_left_button_family_bold | font_face }}
 {{ highlights_right_button_family_bold | font_face }}
+{{ product_price_and_discount_family_bold | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -523,6 +519,13 @@ $highlightsRightButtonFontStack: {{ highlights_right_button_family.family }}, {{
 $highlightsRightButtonFontWeight: {{ highlights_right_button_family.weight }};
 $highlightsRightButtonFontWeightBold: {{ highlights_right_button_family_bold.weight | default: 700 }};
 $highlightsRightButtonFontStyle: {{ highlights_right_button_family.style }};
+
+// Product Price and Discount Font
+$productPriceAndDiscountFontStack: {{ product_price_and_discount_family.family }}, {{ product_price_and_discount_family.fallback_families }};
+$productPriceAndDiscountFontWeight: {{ product_price_and_discount_family.weight }};
+$productPriceAndDiscountFontWeightBold: {{ product_price_and_discount_family.weight | default: 700 }};
+$productPriceAndDiscountFontStyle: {{ product_price_and_discount_family.style }};
+
 
 @font-face {
   font-family: 'icons';
