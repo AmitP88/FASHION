@@ -1,0 +1,73 @@
+<div class="trending-items">
+  <div class="heading_container">
+    <h2 class="heading">{{ section.settings.trending_items_heading }}</h2>
+  </div>
+  <div class="content">
+    <div class="products_container">
+      {% for product in collections.trending-items.products %}
+        <div class="product">
+          <div class="top-half">
+            <div class="price">
+              <p class="price_text">{{ product.price | money }}</p>
+            </div>
+            {% if product.compare_at_price > product.price %}
+              <div class="discount">
+                <p class="percent_off">{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}% off</p>
+              </div>            
+            {% endif %}
+            <img class="product_image" src="{{ product.trending_image | img_url: '270x405' }}" alt="{{ product.title }}" >
+            <div class="preview_icon">
+              <img src="https://cdn.shopify.com/s/files/1/0459/7501/1480/files/eye_icon_bc0fd2f0-fd06-48ac-a5c6-aa39133712b7.png?v=1601692737" alt="preview_icon">
+            </div>
+          </div>
+          <div class="bottom-half">
+            <h1 class="name">{{ product.title }}</h1>
+            <div class="review">
+              <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+            </div>
+            <div class="buttons_container">
+              <div class="wishlist button">
+                {% include 'swym-product-view', product: product %}
+                <button class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}"></button>
+              </div>
+              <div class="cart button">
+                <span class="icon icon-cart" aria-hidden="true"></span>
+              </div>
+              <div class="share button">
+                <div data-network="sharethis" class="st-custom-button">
+                  <i class="fas fa-share-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>     
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "en": "trending Items"
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "trending_items_heading",
+        "label": {
+          "en": "Heading"
+        },
+        "default": {
+          "en": "trending Items"
+        }
+      }
+    ],
+    "presets": [
+      {
+        "name": "trending Items",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}
