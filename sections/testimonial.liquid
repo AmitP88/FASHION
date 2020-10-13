@@ -1,0 +1,26 @@
+{%- style -%}
+  {%- assign background_image = section.settings.testimonial_background -%}
+
+  .testimonial {
+    background-image: url('{{ background_image | img_url: '1394x472' }}');
+    height: 472px;
+    width: 100%;
+    background-size: cover;
+  }
+
+{%- endstyle -%}
+
+<div class="testimonial"></div>
+
+{% schema %}
+  {
+    "name": "Testimonial",
+    "settings": [
+      {
+        "id": "testimonial_background",
+        "type": "image_picker",
+        "label": "Background Image"
+      }
+    ]
+  }
+{% endschema %}
