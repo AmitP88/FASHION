@@ -114,12 +114,6 @@
 }
 
 /*================ Functions ================*/
-@function em($target, $context: $baseFontSize) {
-  @if $target == 0 {
-    @return 0;
-  }
-  @return $target / $context + 0em;
-}
 
 @function color-control($color) {
   @if (lightness( $color ) > 40) {
@@ -185,12 +179,6 @@
   font-family: $productPriceAndDiscountFontStack;
   font-weight: $productPriceAndDiscountFontWeight;
   font-size: $productPriceAndDiscountFontStyle;
-}
-
-@mixin bodyFontItalic {
-  {% if settings.type_base_italize_titles %}
-    font-style: italic;
-  {% endif %}
 }
 
 @mixin visuallyHidden {
@@ -448,7 +436,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 
 /*================ Typography ================*/
 {%- assign accent_family = settings.type_accent_family -%}
-{%- assign base_family = settings.type_base_family -%}
 {%- assign header_family = settings.type_header_family -%}
 {%- assign highlights_description_family  = settings.highlights_description_family -%}
 {%- assign highlights_left_button_family  = settings.highlights_left_button_family -%}
@@ -456,25 +443,18 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign product_price_and_discount_family = settings.product_price_and_discount_family -%}
 
 {{ accent_family | font_face }}
-{{ base_family | font_face }}
 {{ header_family | font_face }}
 {{ highlights_description_family | font_face }}
 {{ highlights_left_button_family | font_face }}
 {{ highlights_right_button_family | font_face }}
 {{ product_price_and_discount_family | font_face }}
 
-{%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
-{%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
-{%- assign base_family_bold_italic = base_family_bold | font_modify: 'style', 'italic' -%}
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_left_button_family_bold = highlights_left_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign product_price_and_discount_family_bold = product_price_and_discount_family | font_modify: 'weight', 'bolder' -%}
 
-{{ base_family_bold | font_face }}
-{{ base_family_italic | font_face }}
-{{ base_family_bold_italic | font_face }}
 {{ accent_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
 {{ highlights_left_button_family_bold | font_face }}
@@ -487,12 +467,6 @@ $headerFontWeight: {{ header_family.weight }};
 $headerFontStyle: {{ header_family.style }};
 $headerBaseFontSize: {{ settings.type_header_base_size }};
 
-// Body Font
-$bodyFontStack: {{ base_family.family }}, {{ base_family.fallback_families }};
-$bodyFontWeight: {{ base_family.weight }};
-$bodyFontWeightBold: {{ base_family_bold.weight | default: 700 }};
-$bodyFontStyle: {{ base_family.style }};
-$baseFontSize: {{ settings.type_base_size }}; // Henceforth known as 1em
 
 // Accent Font
 $accentFontStack: {{ accent_family.family }}, {{ accent_family.fallback_families }};
@@ -1089,29 +1063,6 @@ select {
   line-height: 1.563; // 25px based on 16px font
 }
 
-h1 {
-  font-size: em($headerBaseFontSize);
-}
-
-h2 {
-  font-size: em(floor($headerBaseFontSize * 0.93));
-}
-
-h3 {
-  font-size: em(floor($headerBaseFontSize * 0.77));
-}
-
-h4 {
-  font-size: em(floor($headerBaseFontSize * 0.65));
-}
-
-h5 {
-  font-size: em(floor($headerBaseFontSize * 0.56));
-}
-
-h6 {
-  font-size: em(floor($headerBaseFontSize * 0.51));
-}
 
 {% if settings.type_accent_subheadings %}
   h3, h4, h5, h6 {
@@ -1168,7 +1119,6 @@ th,
 }
 
 blockquote {
-  @include bodyFontItalic;
   font-size: em(23px);
   line-height: 1.385;
   text-align: center;
@@ -1179,7 +1129,6 @@ blockquote {
 }
 
 .section-header .rte {
-  @include bodyFontItalic;
   font-size: em(18px);
 }
 
@@ -1194,7 +1143,6 @@ blockquote {
 
 /*================ Blog Typography ================*/
 .date {
-  @include bodyFontItalic;
   display: inline-block;
   line-height: 1.7;
   margin-bottom: 5px;
@@ -1209,7 +1157,6 @@ blockquote {
 }
 
 .comment-author {
-  @include bodyFontItalic;
   margin-bottom: 0;
 }
 
@@ -1221,7 +1168,6 @@ blockquote {
 /*================ Cart Typography ================*/
 .ajaxcart__product-name,
 .cart__product-name {
-  @include bodyFontItalic;
 }
 
 .ajaxcart__product-name {
@@ -1246,7 +1192,6 @@ blockquote {
 
 .ajaxcart__discount {
   display: block;
-  @include bodyFontItalic;
 }
 
 .ajaxcart__subtotal {
@@ -1260,13 +1205,10 @@ blockquote {
 }
 
 .ajaxcart__note {
-  @include bodyFontItalic;
-  font-weight: $bodyFontWeight;
   opacity: 0.7;
 }
 
 .ajaxcart__policies {
-  font-weight: $bodyFontWeight;
   opacity: 0.7;
 }
 
@@ -1285,7 +1227,6 @@ blockquote {
 }
 
 .collection-grid__item-title {
-  @include bodyFontItalic;
   font-size: em(26px);
   line-height: 1.1;
 
@@ -1295,10 +1236,6 @@ blockquote {
 }
 
 /*================ Partials | Theme Form Overrides ================*/
-label {
-  @include bodyFontItalic;
-  font-weight: $bodyFontWeight;
-}
 
 ::-webkit-input-placeholder {
   color: $colorTextBody;
@@ -1323,7 +1260,6 @@ label {
 input,
 textarea,
 select {
-  // @include bodyFontItalic;
   // font-size: em(18px);
   border-color: transparent;
   background-color: $colorInputBg;
@@ -1839,9 +1775,6 @@ $shareButtonCleanHeight: 30px;
 $shareCountBg: $colorBody;
 
 .social-sharing {
-  font-family: $bodyFontStack;
-  font-weight: $bodyFontWeight;
-  font-style: $bodyFontStyle;
 
   * {
     -webkit-box-sizing:border-box;
@@ -1857,7 +1790,6 @@ $shareCountBg: $colorBody;
     height: $shareButtonHeight;
     line-height: $shareButtonHeight;
     text-decoration: none;
-    font-weight: $bodyFontWeight;
   }
 
   span {
@@ -1932,9 +1864,6 @@ $shareCountBg: $colorBody;
       }
     }
 
-    .share-title {
-      font-weight: $bodyFontWeight;
-    }
   }
 
   .share-count {
@@ -3118,7 +3047,6 @@ $slick-dot-character: '\2022';
 }
 
 .site-nav__dropdown-link {
-  @include bodyFontItalic;
   display: block;
   white-space: nowrap;
   padding: 5px 15px;
@@ -3508,10 +3436,6 @@ button.mfp-arrow {
   margin: 0 4px;
 }
 
-.grid-product__title {
-  @include bodyFontItalic;
-  font-size: em(floor($baseFontSize * 1.25));  //20px based on 16px base font size
-}
 
 .grid-product__vendor {
   @include accentFontStack;
@@ -3680,19 +3604,6 @@ button.mfp-arrow {
   }
 }
 
-.rich-text__heading--large {
-  font-size: em(floor($headerBaseFontSize * 1.2));
-}
-.rich-text__heading--small {
-  font-size: em(floor($headerBaseFontSize * 0.8));
-}
-
-.rich-text__text--large {
-  font-size: em(floor($baseFontSize * 1.2));
-}
-.rich-text__text--small {
-  font-size: em(floor($baseFontSize * 0.925));
-}
 
 /*================ Modules | Theme collection grid item ================*/
 .collection-collage__item {
@@ -4123,7 +4034,6 @@ $disclosure-list-large: 1100px;
 }
 
 .disclosure__toggle {
-  @include bodyFontItalic;
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -4181,7 +4091,6 @@ $disclosure-list-large: 1100px;
   white-space: nowrap;
 
   .disclosure-list__option {
-    @include bodyFontItalic;
     color: $colorTextBody;
 
     &:focus,
@@ -4653,13 +4562,9 @@ $disclosure-list-large: 1100px;
 
 .password-login {
   @include accentFontStack;
-  font-size: em(0.8 * $baseFontSize);
-  line-height: 0.8 * $baseFontSize;
 }
 
 .lock-icon-svg {
-  width: 0.8 * $baseFontSize;
-  height: 0.8 * $baseFontSize;
   display: inline-block;
   vertical-align: baseline;
 
@@ -4681,7 +4586,6 @@ $disclosure-list-large: 1100px;
   display: table-cell;
   vertical-align: bottom;
   padding: $gutter;
-  line-height: 1.5 * $baseFontSize;
   font-size: 95%;
 }
 
@@ -4694,8 +4598,6 @@ $disclosure-list-large: 1100px;
 }
 
 .shopify-logo-svg {
-  width: 1.5 * $baseFontSize * 120 / 35;
-  height: 1.5 * $baseFontSize;
   display: inline-block;
   line-height: 0;
   vertical-align: top;
@@ -4758,10 +4660,8 @@ $disclosure-list-large: 1100px;
 
   tbody th,
   tfoot th {
-    font-family: $bodyFontStack;
     font-weight: normal;
     text-transform: none;
-    font-size: $baseFontSize;
     letter-spacing: 0;
   }
 

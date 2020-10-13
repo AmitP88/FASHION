@@ -122,13 +122,6 @@
 }
 
 /*================ Functions ================*/
-@function em($target, $context: $baseFontSize) {
-  @if $target == 0 {
-    @return 0;
-  }
-  @return $target / $context + 0em;
-}
-
 @function color-control($color) {
   @if (lightness( $color ) > 40) {
     @return #1c1d1d;
@@ -187,12 +180,6 @@
   font-family: $highlightsRightButtonFontStack;
   font-weight: $highlightsRightButtonFontWeight;
   font-size: $highlightsRightButtonFontStyle;
-}
-
-@mixin bodyFontItalic {
-  {% if settings.type_base_italize_titles %}
-    font-style: italic;
-  {% endif %}
 }
 
 @mixin visuallyHidden {
@@ -449,7 +436,6 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 
 /*================ Typography ================*/
 {%- assign accent_family = settings.type_accent_family -%}
-{%- assign base_family = settings.type_base_family -%}
 {%- assign header_family = settings.type_header_family -%}
 {%- assign highlights_description_family  = settings.highlights_description_family -%}
 {%- assign highlights_left_button_family  = settings.highlights_left_button_family -%}
@@ -457,25 +443,18 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign product_price_and_discount_family = settings.product_price_and_discount_family -%}
 
 {{ accent_family | font_face }}
-{{ base_family | font_face }}
 {{ header_family | font_face }}
 {{ highlights_description_family | font_face }}
 {{ highlights_left_button_family | font_face }}
 {{ highlights_right_button_family | font_face }}
 {{ product_price_and_discount_family | font_face }}
 
-{%- assign base_family_bold = base_family | font_modify: 'weight', 'bolder' -%}
-{%- assign base_family_italic = base_family | font_modify: 'style', 'italic' -%}
-{%- assign base_family_bold_italic = base_family_bold | font_modify: 'style', 'italic' -%}
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_left_button_family_bold = highlights_left_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign product_price_and_discount_family_bold = product_price_and_discount_family | font_modify: 'weight', 'bolder' -%}
 
-{{ base_family_bold | font_face }}
-{{ base_family_italic | font_face }}
-{{ base_family_bold_italic | font_face }}
 {{ accent_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
 {{ highlights_left_button_family_bold | font_face }}
@@ -488,12 +467,6 @@ $headerFontWeight: {{ header_family.weight }};
 $headerFontStyle: {{ header_family.style }};
 $headerBaseFontSize: {{ settings.type_header_base_size }};
 
-// Body Font
-$bodyFontStack: {{ base_family.family }}, {{ base_family.fallback_families }};
-$bodyFontWeight: {{ base_family.weight }};
-$bodyFontWeightBold: {{ base_family_bold.weight | default: 700 }};
-$bodyFontStyle: {{ base_family.style }};
-$baseFontSize: {{ settings.type_base_size }}; // Henceforth known as 1em
 
 // Accent Font
 $accentFontStack: {{ accent_family.family }}, {{ accent_family.fallback_families }};
@@ -662,12 +635,8 @@ input,
 textarea,
 button,
 select {
-  font-size: $baseFontSize;
   line-height: 1.6;
-  font-family: $bodyFontStack;
   color: $colorTextBody;
-  font-weight: $bodyFontWeight;
-  font-style: $bodyFontStyle;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
@@ -758,7 +727,7 @@ em {
 
 b,
 strong {
-  font-weight: $bodyFontWeightBold;
+
 }
 
 small {
@@ -887,7 +856,7 @@ table {
 }
 
 th {
-  font-weight: $bodyFontWeightBold;
+
 }
 
 th,
@@ -2962,7 +2931,6 @@ $socialIconFontStack: 'icons';
 
   .mobile-nav__link {
     padding-left: $gutter;
-    font-weight: $bodyFontWeight;
   }
 }
 
@@ -3480,7 +3448,6 @@ $socialIconFontStack: 'icons';
   .spr-review-content-body,
   .spr-review-header-byline,
   .spr-form-label {
-    font-size: $baseFontSize;
     line-height: 1.563;
   }
 
