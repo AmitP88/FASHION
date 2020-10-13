@@ -13,6 +13,7 @@
 
 <div class="testimonial">
   <img class="quote_icon" src="{{ section.settings.icon | img_url: '23x19' }}" alt="{{ section.settings.icon }}">
+  <p class="quote">&quot;{{ section.settings.quote }}&quot;</p>
 </div>
 
 {% schema %}
@@ -28,6 +29,12 @@
         "id": "icon",
         "type": "image_picker",
         "label": "Icon"
+      },
+      {
+        "id": "quote",
+        "type": "text",
+        "label": "Quote",
+        "default": "Nunc vulputate odio vitae sapien euismod rhoncus. Vestibulum ante orci, elemet molestie sed, efficitur a augue. Quisque placerat laoreet lorem"
       }
     ],
     "presets": [
