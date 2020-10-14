@@ -4,6 +4,7 @@
   {%- assign bottom_bar_bg = section.settings.bottom_bar_bg -%}
   {%- assign bottom_bar_text_color = section.settings.bottom_bar_text_color -%}
   {%- assign bottom_bar_text_color_hover = section.settings.bottom_bar_text_color_hover -%}
+  {%- assign font_size = '12px' -%}
 
   .site-header__logo img {
     width: {{ logo_max_width | append: 'px' }};
@@ -45,6 +46,10 @@
 
   .top-nav > .site-nav__item > .site-nav__link:hover {
     color: {{ bottom_bar_text_color_hover }};
+  }
+
+  .announcement-bar__message, .top-nav > .site-nav__item > .site-nav__link {
+    font-size: {{ font_size }};
   }
 
 {%- endstyle -%}
