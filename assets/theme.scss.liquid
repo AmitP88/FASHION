@@ -183,7 +183,7 @@
 
 @mixin quoteFontStack {
   font-family: $quoteFontStack;
-  font-weight: $quoteFontWeightBoldItalic;
+  font-weight: $quoteFontWeight;
   font-size: $quoteFontStyle;
 }
 
@@ -462,14 +462,14 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign highlights_left_button_family_bold = highlights_left_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign product_price_and_discount_family_bold = product_price_and_discount_family | font_modify: 'weight', 'bolder' -%}
-{%- assign quote_family_bold_italic = quote_family | font_modify: 'weight', 'bolder' | font_modify: 'style', 'italic' -%}
+{%- assign quote_family_italic = quote_family | font_modify: 'style', 'italic' -%}
 
 {{ accent_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
 {{ highlights_left_button_family_bold | font_face }}
 {{ highlights_right_button_family_bold | font_face }}
 {{ product_price_and_discount_family_bold | font_face }}
-{{ quote_family_bold_italic | font_face }}
+{{ quote_family_italic | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -512,8 +512,8 @@ $productPriceAndDiscountFontStyle: {{ product_price_and_discount_family.style }}
 // Quote Font
 $quoteFontStack: {{ quote_family.family }}, {{ quote_family.fallback_families }};
 $quoteFontWeight: {{ quote_family.weight }};
-$quoteFontWeightBoldItalic: {{ quote_family_bold_italic.weight | default: 700 }};
-$quoteFontStyle: {{ quote_family.style }};
+$quoteFontWeightBold: {{ quote_family.weight | default: 700 }};
+$quoteFontStyle: {{ quote_family_italic.style | default: 'italic' }};
 
 @font-face {
   font-family: 'icons';
