@@ -181,6 +181,12 @@
   font-size: $productPriceAndDiscountFontStyle;
 }
 
+@mixin quoteFontStack {
+  font-family: $quoteFontStack;
+  font-weight: $quoteFontWeightBoldItalic;
+  font-size: $quoteFontStyle;
+}
+
 @mixin visuallyHidden {
   clip: rect(0 0 0 0);
   clip: rect(0, 0, 0, 0);
@@ -441,6 +447,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign highlights_left_button_family  = settings.highlights_left_button_family -%}
 {%- assign highlights_right_button_family  = settings.highlights_right_button_family -%}
 {%- assign product_price_and_discount_family = settings.product_price_and_discount_family -%}
+{%- assign quote_family = settings.quote_family -%}
 
 {{ accent_family | font_face }}
 {{ header_family | font_face }}
@@ -448,18 +455,21 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ highlights_left_button_family | font_face }}
 {{ highlights_right_button_family | font_face }}
 {{ product_price_and_discount_family | font_face }}
+{{ quote_family | font_face }}
 
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_left_button_family_bold = highlights_left_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign product_price_and_discount_family_bold = product_price_and_discount_family | font_modify: 'weight', 'bolder' -%}
+{%- assign quote_family_bold_italic = quote_family | font_modify: 'weight', 'bolder' | font_modify: 'style', 'italic' -%}
 
 {{ accent_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
 {{ highlights_left_button_family_bold | font_face }}
 {{ highlights_right_button_family_bold | font_face }}
 {{ product_price_and_discount_family_bold | font_face }}
+{{ quote_family_bold_italic | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -496,9 +506,14 @@ $highlightsRightButtonFontStyle: {{ highlights_right_button_family.style }};
 // Product Price and Discount Font
 $productPriceAndDiscountFontStack: {{ product_price_and_discount_family.family }}, {{ product_price_and_discount_family.fallback_families }};
 $productPriceAndDiscountFontWeight: {{ product_price_and_discount_family.weight }};
-$productPriceAndDiscountFontWeightBold: {{ product_price_and_discount_family.weight | default: 700 }};
+$productPriceAndDiscountFontWeightBold: {{ product_price_and_discount_family_bold.weight | default: 700 }};
 $productPriceAndDiscountFontStyle: {{ product_price_and_discount_family.style }};
 
+// Quote Font
+$quoteFontStack: {{ quote_family.family }}, {{ quote_family.fallback_families }};
+$quoteFontWeight: {{ quote_family.weight }};
+$quoteFontWeightBoldItalic: {{ quote_family_bold_italic.weight | default: 700 }};
+$quoteFontStyle: {{ quote_family.style }};
 
 @font-face {
   font-family: 'icons';
@@ -5268,6 +5283,7 @@ $disclosure-list-large: 1100px;
     width: fit-content;
     max-width: 665px;
     text-align: center;
+    @include quoteFontStack;
   }
 }
 

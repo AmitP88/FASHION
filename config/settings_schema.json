@@ -987,16 +987,30 @@
       {
         "type": "header",
         "content": {
-          "en": "Featured Items"
+          "en": "Featured Items & Trending Items"
         }
       },
       {
         "type": "font_picker",
         "id": "product_price_and_discount_family",
         "label": {
-          "en": "Product price and discount"
+          "en": "Product price and discount font"
         },
         "default": "open_sans_n6"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Testimonials"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "quote_family",
+        "label": {
+          "en": "Quote font"
+        },
+        "default": "open_sans_i4"
       }
     ]
   },
