@@ -1,10 +1,35 @@
+{%- style -%}
+  {%- assign logo_1 = section.settings.brand_1 -%}
+  {%- assign logo_2 = section.settings.brand_2 -%}
+  {%- assign logo_3 = section.settings.brand_3 -%}
+  {%- assign logo_4 = section.settings.brand_4 -%}
+  .logo {
+    height: 36px;
+    width: 190px;
+    background-size: cover;
+    background-position: center;
+  }
+  .one {
+    background-image: url('{{ logo_1 | img_url: '190x36' }}');
+  }
+  .two {
+    background-image: url('{{ logo_2 | img_url: '190x36' }}');
+  }
+  .three {
+    background-image: url('{{ logo_3 | img_url: '190x36' }}');
+  }
+  .four {
+    background-image: url('{{ logo_4 | img_url: '190x36' }}');
+  }
+{%- endstyle -%}
+
 <div class="brands">
   <h1 class="heading">{{ section.settings.brands_section_heading }}</h1>
   <div class="logos_container">
-    <img src="{{ section.settings.brand_1 | img_url: '190x36' }}" alt="{{ section.settings.brand_1 }}">
-    <img src="{{ section.settings.brand_2 | img_url: '190x36' }}" alt="{{ section.settings.brand_2 }}">
-    <img src="{{ section.settings.brand_3 | img_url: '190x36' }}" alt="{{ section.settings.brand_3 }}">
-    <img src="{{ section.settings.brand_4 | img_url: '190x36' }}" alt="{{ section.settings.brand_4 }}">
+    <div class="logo one"></div>
+    <div class="logo two"></div>
+    <div class="logo three"></div>
+    <div class="logo four"></div>
   </div>
 </div>
 
