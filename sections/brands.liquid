@@ -1,0 +1,29 @@
+<div class="brands">
+  <h1 class="heading">{{ section.settings.brands_section_heading }}</h1>
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Brands"
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "brands_section_heading",
+        "label": {
+          "en": "Heading"
+        },
+        "default": {
+          "en": "Shop By Brand"
+        }
+      }
+    ],
+    "presets": [
+      {
+        "name": "Brands",
+        "category": "Brands"
+      }
+    ]
+  }
+{% endschema %}
