@@ -5268,23 +5268,28 @@ $disclosure-list-large: 1100px;
 // --------------------------------------------------------------
 .testimonial {
   position: relative;
-  .quote_icon {
+  .content {
+    margin: 0;
     position: absolute;
-    top: 80px;
-    left: 50%;
-  }
-  .quote {
-    position: absolute;
-    top: 167px;
-    left: 30%;
-    color: #ffffff;
-    font-size: 15px;
-    margin: 0 auto;
-    width: fit-content;
-    max-width: 665px;
-    text-align: center;
-    @include quoteFontStack;
-    font-style: italic;
+    top: 50%;
+    left: 50%;    
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    .quote_icon, .author_photo {
+      display: block;
+      margin: 0 auto;
+    }
+    .quote {
+      color: #ffffff;
+      font-size: 15px;
+      margin: 0 auto;
+      margin: 66px 0;
+      width: fit-content;
+      max-width: 665px;
+      text-align: center;
+      @include quoteFontStack;
+      font-style: italic;
+    }    
   }
 }
 

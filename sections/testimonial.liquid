@@ -12,8 +12,11 @@
 {%- endstyle -%}
 
 <div class="testimonial">
-  <img class="quote_icon" src="{{ section.settings.icon | img_url: '23x19' }}" alt="{{ section.settings.icon }}">
-  <p class="quote">&quot;{{ section.settings.quote }}&quot;</p>
+  <div class="content">
+    <img class="quote_icon" src="{{ section.settings.icon | img_url: '23x19' }}" alt="{{ section.settings.icon }}">
+    <p class="quote">&quot;{{ section.settings.quote }}&quot;</p>
+    <img class="author_photo" src="{{ section.settings.author_photo | img_url: '66x66' }}" alt="{{ section.settings.author_photo }}">    
+  </div>
 </div>
 
 {% schema %}
@@ -35,6 +38,11 @@
         "type": "text",
         "label": "Quote",
         "default": "Nunc vulputate odio vitae sapien euismod rhoncus. Vestibulum ante orci, elemet molestie sed, efficitur a augue. Quisque placerat laoreet lorem"
+      },
+      {
+        "id": "author_photo",
+        "type": "image_picker",
+        "label": "Quote Author Photo"
       }
     ],
     "presets": [
