@@ -1,5 +1,11 @@
 <div class="brands">
   <h1 class="heading">{{ section.settings.brands_section_heading }}</h1>
+  <div class="logos_container">
+    <img src="{{ section.settings.brand_1 | img_url: '190x36' }}" alt="{{ section.settings.brand_1 }}">
+    <img src="{{ section.settings.brand_2 | img_url: '190x36' }}" alt="{{ section.settings.brand_2 }}">
+    <img src="{{ section.settings.brand_3 | img_url: '190x36' }}" alt="{{ section.settings.brand_3 }}">
+    <img src="{{ section.settings.brand_4 | img_url: '190x36' }}" alt="{{ section.settings.brand_4 }}">
+  </div>
 </div>
 
 {% schema %}
@@ -16,6 +22,34 @@
         },
         "default": {
           "en": "Shop By Brand"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_1",
+        "label": {
+          "en": "Brand 1"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_2",
+        "label": {
+          "en": "Brand 2"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_3",
+        "label": {
+          "en": "Brand 3"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_4",
+        "label": {
+          "en": "Brand 4"
         }
       }
     ],
