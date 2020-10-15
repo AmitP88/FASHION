@@ -3,23 +3,45 @@
   {%- assign logo_2 = section.settings.brand_2 -%}
   {%- assign logo_3 = section.settings.brand_3 -%}
   {%- assign logo_4 = section.settings.brand_4 -%}
+
+  {%- assign logo_1_hover = section.settings.brand_1_hover -%}
+  {%- assign logo_2_hover = section.settings.brand_2_hover -%}
+  {%- assign logo_3_hover = section.settings.brand_3_hover -%}
+  {%- assign logo_4_hover = section.settings.brand_4_hover -%}
+
   .logo {
     height: 36px;
     width: 190px;
     background-size: cover;
     background-position: center;
   }
-  .one {
+  .logos_container > .one {
     background-image: url('{{ logo_1 | img_url: '190x36' }}');
   }
-  .two {
+  .logos_container > .one:hover {
+    background-image: url('{{ logo_1_hover | img_url: '190x36' }}');
+    cursor: pointer;
+  }
+  .logos_container > .two {
     background-image: url('{{ logo_2 | img_url: '190x36' }}');
   }
-  .three {
+  .logos_container > .two:hover {
+    background-image: url('{{ logo_2_hover | img_url: '190x36' }}');
+    cursor: pointer;
+  }
+  .logos_container > .three {
     background-image: url('{{ logo_3 | img_url: '190x36' }}');
   }
-  .four {
+  .logos_container > .three:hover {
+    background-image: url('{{ logo_3_hover | img_url: '190x36' }}');
+    cursor: pointer;
+  }
+  .logos_container > .four {
     background-image: url('{{ logo_4 | img_url: '190x36' }}');
+  }
+  .logos_container > .four:hover {
+    background-image: url('{{ logo_4_hover | img_url: '190x36' }}');
+    cursor: pointer;
   }
 {%- endstyle -%}
 
@@ -58,9 +80,23 @@
       },
       {
         "type": "image_picker",
+        "id": "brand_1_hover",
+        "label": {
+          "en": "Brand 1 Hover"
+        }
+      },
+      {
+        "type": "image_picker",
         "id": "brand_2",
         "label": {
           "en": "Brand 2"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_2_hover",
+        "label": {
+          "en": "Brand 2 Hover"
         }
       },
       {
@@ -72,9 +108,23 @@
       },
       {
         "type": "image_picker",
+        "id": "brand_3_hover",
+        "label": {
+          "en": "Brand 3 Hover"
+        }
+      },
+      {
+        "type": "image_picker",
         "id": "brand_4",
         "label": {
           "en": "Brand 4"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "brand_4_hover",
+        "label": {
+          "en": "Brand 4 Hover"
         }
       }
     ],
