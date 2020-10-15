@@ -15,7 +15,8 @@
   <div class="content">
     <img class="quote_icon" src="{{ section.settings.icon | img_url: '23x19' }}" alt="{{ section.settings.icon }}">
     <p class="quote">&quot;{{ section.settings.quote }}&quot;</p>
-    <img class="author_photo" src="{{ section.settings.author_photo | img_url: '66x66' }}" alt="{{ section.settings.author_photo }}">    
+    <img class="author_photo" src="{{ section.settings.author_photo | img_url: '66x66' }}" alt="{{ section.settings.author_photo }}">
+    <h3 class="author_name">{{ section.settings.author_name }}</h3>
   </div>
 </div>
 
@@ -43,6 +44,12 @@
         "id": "author_photo",
         "type": "image_picker",
         "label": "Quote Author Photo"
+      },
+      {
+        "id": "author_name",
+        "type": "text",
+        "label": "Author of Quote",
+        "default": "md shahin alam"
       }
     ],
     "presets": [
