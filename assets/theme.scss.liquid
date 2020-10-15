@@ -5238,31 +5238,6 @@ $disclosure-list-large: 1100px;
 
 
 
-
-
-
-
-
-
-  /* --- Mobile --- */
-  @media screen and (max-width: 499px){
-    .featured-items, .trending-items {
-      .content {
-        .products_container {
-          display: grid;
-          grid-template-columns: 100%;
-          row-gap: 30px;
-          .product {
-            margin: 0 auto;
-            width: fit-content;
-          }
-        }
-      }
-    }
-
-
-  }
-
 // --------------------------------------------------------------
 // Testimonial Section
 // --------------------------------------------------------------
@@ -5312,12 +5287,67 @@ $disclosure-list-large: 1100px;
 
 
 
+// --------------------------------------------------------------
+// Blogs Section
+// --------------------------------------------------------------
+.featured-blog {
+  margin-top: 100px;
+  .wrapper {
+    .section-header {
+      .section-header__title {
+        display: flex;
+        width: 100%;
+        max-width: 1171px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+        font-family: "Encode Sans Narrow Medium";
+        font-size: 27px;
+        color: $colorHighlightSubheading;
+      }
+      .section-header__title:before,
+      .section-header__title:after {
+        content: '';
+        border: 1px solid #cdcdcd;
+        height: 3px;
+        margin: 0 10px 0 0;
+        flex: 1 0 20px;
+      }
+      
+      .section-header__title:after {
+        margin: 0 0 0 10px;
+      }     
+    }
+  }
+
+}
+
+
+
+
 
 // --------------------------------------------------------------
 // MEDIA QUERIES
 // --------------------------------------------------------------
 
+  /* --- Mobile --- */
+  @media screen and (max-width: 499px){
+    .featured-items, .trending-items {
+      .content {
+        .products_container {
+          display: grid;
+          grid-template-columns: 100%;
+          row-gap: 30px;
+          .product {
+            margin: 0 auto;
+            width: fit-content;
+          }
+        }
+      }
+    }
 
+  }
 
   /* --- Tablet --- */
   @media screen and (min-width: 500px) and (max-width: 1200px) {
