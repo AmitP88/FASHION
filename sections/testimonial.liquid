@@ -17,6 +17,7 @@
     <p class="quote">&quot;{{ section.settings.quote }}&quot;</p>
     <img class="author_photo" src="{{ section.settings.author_photo | img_url: '66x66' }}" alt="{{ section.settings.author_photo }}">
     <h3 class="author_name">{{ section.settings.author_name }}</h3>
+    <h4 class="author_title">{{ section.settings.author_title }}</h4>
   </div>
 </div>
 
@@ -50,6 +51,12 @@
         "type": "text",
         "label": "Author of Quote",
         "default": "md shahin alam"
+      },
+      {
+        "id": "author_title",
+        "type": "text",
+        "label": "Author Title",
+        "default": "Ceo Of TTCM"
       }
     ],
     "presets": [
