@@ -1,10 +1,17 @@
 <footer class="site-footer small--text-center" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
   <div class="wrapper">
-    <p>TEST</p>
+    <div class="menu">
+      <h4 class="list_title">{{ linklists[section.settings.footer_link_list].title }}</h4>
+      <ul>
+        {% for link in linklists[section.settings.footer_link_list].links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>          
+          </li>
+        {% endfor %}      
+      </ul>      
+    </div>
 
-    {% for link in linklists.shops-menu.links %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endfor %}
+
 
   </div>
 </footer>
