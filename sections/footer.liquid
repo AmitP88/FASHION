@@ -35,18 +35,20 @@
 
   </div>
   <div class="small_footer">
-    <p class="copyright">{{ section.settings.copyright }}</p>
-    <ul class="credit_cards">
-      <li class="cc">
-        <img src="{{ section.settings.card_1 | img_url: 'small' }}" alt="{{ section.settings.card_1 }}">
-      </li>
-      <li class="cc">
-        <img src="{{ section.settings.card_2 | img_url: 'small'}}" alt="{{ section.settings.card_2 }}">
-      </li>
-      <li class="cc">
-        <img src="{{ section.settings.card_3 | img_url: 'small'}}" alt="{{ section.settings.card_3 }}">
-      </li>
-    </ul>
+    <div class="wrapper">
+      <p class="copyright">{{ section.settings.copyright }}</p>
+      <ul class="credit_cards">
+        <li class="cc">
+          <img src="{{ section.settings.card_1 | img_url: 'small' }}" alt="{{ section.settings.card_1 }}">
+        </li>
+        <li class="cc">
+          <img src="{{ section.settings.card_2 | img_url: 'small'}}" alt="{{ section.settings.card_2 }}">
+        </li>
+        <li class="cc">
+          <img src="{{ section.settings.card_3 | img_url: 'small'}}" alt="{{ section.settings.card_3 }}">
+        </li>
+      </ul>      
+    </div>
   </div>
 </footer>
 
