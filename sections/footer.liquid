@@ -22,6 +22,17 @@
       </ul>      
     </div>
 
+    <div class="menu">
+      <h4 class="list_title">{{ linklists[section.settings.footer_link_list3].title }}</h4>
+      <ul>
+        {% for link in linklists[section.settings.footer_link_list3].links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>          
+          </li>
+        {% endfor %}      
+      </ul>      
+    </div>
+
   </div>
 </footer>
 
@@ -118,6 +129,35 @@
         "da": "Sidefodsmenu",
         "de": "Fußzeilenmenü",
         "en": "Footer menu 2",
+        "es": "Menú inferior",
+        "fi": "Alatunniste-valikko",
+        "fr": "Menu pied de page",
+        "hi": "फुटर मेनू",
+        "it": "Menu footer",
+        "ja": "フッターメニュー",
+        "ko": "바닥글 메뉴",
+        "nb": "Bunntekstmeny",
+        "nl": "Voettekstmenu",
+        "pl": "Menu stopki",
+        "pt-BR": "Menu de rodapé",
+        "pt-PT": "Menu do rodapé",
+        "sv": "Sidfotsmeny",
+        "th": "เมนูส่วนท้าย",
+        "tr": "Altbilgi menüsü",
+        "vi": "Menu chân trang",
+        "zh-CN": "页脚菜单",
+        "zh-TW": "頁尾選單"
+      },
+      "default": "footer"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_link_list3",
+      "label": {
+        "cs": "Nabídka v zápatí",
+        "da": "Sidefodsmenu",
+        "de": "Fußzeilenmenü",
+        "en": "Footer menu 3",
         "es": "Menú inferior",
         "fi": "Alatunniste-valikko",
         "fr": "Menu pied de page",
