@@ -34,12 +34,23 @@
     </div>
 
   </div>
+  <div class="small_footer">
+    <p class="copyright">{{ section.settings.copyright }}</p>
+    <ul class="credit_cards">
+      <li class="cc">
+        <img src="{{ section.settings.card_1 | img_url: 'small' }}" alt="{{ section.settings.card_1 }}">
+      </li>
+      <li class="cc">
+        <img src="{{ section.settings.card_2 | img_url: 'small'}}" alt="{{ section.settings.card_2 }}">
+      </li>
+      <li class="cc">
+        <img src="{{ section.settings.card_3 | img_url: 'small'}}" alt="{{ section.settings.card_3 }}">
+      </li>
+    </ul>
+  </div>
 </footer>
 
-<div class="small_footer">
-  <p class="copyright"></p>
-  
-</div>
+
 
 
 {% schema %}
@@ -182,6 +193,41 @@
         "zh-TW": "頁尾選單"
       },
       "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": {
+        "en": "Small Footer"
+      }
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": {
+        "en": "Copyright statement"
+      },
+      "default": "© 2014 ELLA Fashion Store Shopify. All Rights Reserved. Ecommerce Software by Shopify."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1",
+      "label": {
+        "en": "Credit Card 1"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2",
+      "label": {
+        "en": "Credit Card 2"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3",
+      "label": {
+        "en": "Credit Card 3"
+      }
     }
   ]
 }
