@@ -1033,6 +1033,14 @@
           "en": "List font"
         },
         "default": "source_sans_pro_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "footer_copyright_family",
+        "label": {
+          "en": "Copyright font"
+        },
+        "default": "source_sans_pro_n3"
       }
     ]
   },

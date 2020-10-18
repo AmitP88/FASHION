@@ -199,6 +199,12 @@
   font-size: $footerListFontStyle;
 }
 
+@mixin footerCopyrightFontStack {
+  font-family: $footerCopyrightFontStack;
+  font-weight: $footerCopyrightFontWeight;
+  font-size: $footerCopyrightFontStyle;
+}
+
 @mixin visuallyHidden {
   clip: rect(0 0 0 0);
   clip: rect(0, 0, 0, 0);
@@ -462,6 +468,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign quote_family = settings.quote_family -%}
 {%- assign footer_list_title_family = settings.footer_list_title_family -%}
 {%- assign footer_list_family = settings.footer_list_family -%}
+{%- assign footer_copyright_family = settings.footer_copyright_family -%}
 
 {{ accent_family | font_face }}
 {{ header_family | font_face }}
@@ -472,6 +479,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ quote_family | font_face }}
 {{ footer_list_title_family | font_face }}
 {{ footer_list_family | font_face }}
+{{ footer_copyright_family | font_face }}
 
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
@@ -481,6 +489,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign quote_family_italic = quote_family | font_modify: 'style', 'italic' -%}
 {%- assign footer_list_title_family_bold = footer_list_title_family | font_modify: 'weight', 'bolder' -%}
 {%- assign footer_list_family_bold = footer_list_family | font_modify: 'weight', 'bolder' -%}
+{%- assign footer_copyright_family_bold = footer_copyright_family | font_modify: 'weight', 'bolder' -%}
 
 {{ accent_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
@@ -490,6 +499,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ quote_family_italic | font_face }}
 {{ footer_list_title_family_bold | font_face }}
 {{ footer_list_family_bold | font_face }}
+{{ footer_copyright_family_bold | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -546,6 +556,12 @@ $footerListFontStack: {{ footer_list_family.family }}, {{ footer_list_family.fal
 $footerListFontWeight: {{ footer_list_family.weight }};
 $footerListFontWeightBold: {{ footer_list_family_bold.weight | default: 700 }};
 $footerListFontStyle: {{ footer_list_family.style }};
+
+// Footer Copyright Font
+$footerCopyrightFontStack: {{ footer_copyright_family.family }}, {{ footer_copyright_family.fallback_families }};
+$footerCopyrightFontWeight: {{ footer_copyright_family.weight }};
+$footerCopyrightFontWeightBold: {{ footer_copyright_family_bold.weight | default: 700 }};
+$footerCopyrightFontStyle: {{ footer_copyright_family.style }};
 
 @font-face {
   font-family: 'icons';
@@ -5479,6 +5495,7 @@ $disclosure-list-large: 1100px;
     .copyright {
       color: #a8a6a6;
       margin: 0;
+      @include footerCopyrightFontStack;
     }
     .credit_cards {
       display: flex;
