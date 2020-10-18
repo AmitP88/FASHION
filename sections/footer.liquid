@@ -1,37 +1,40 @@
 <footer class="site-footer small--text-center" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
   <div class="wrapper">
-    <div class="menu">
-      <h4 class="list_title">{{ linklists[section.settings.footer_link_list].title }}</h4>
-      <ul>
-        {% for link in linklists[section.settings.footer_link_list].links %}
-          <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>          
-          </li>
-        {% endfor %}      
-      </ul>      
-    </div>
+    <ul class="columns">
+      <li class="menu">
+        <h4 class="list_title">{{ linklists[section.settings.footer_link_list].title }}</h4>
+        <ul>
+          {% for link in linklists[section.settings.footer_link_list].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>          
+            </li>
+          {% endfor %}      
+        </ul>      
+      </li>
+  
+      <li class="menu">
+        <h4 class="list_title">{{ linklists[section.settings.footer_link_list2].title }}</h4>
+        <ul>
+          {% for link in linklists[section.settings.footer_link_list2].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>          
+            </li>
+          {% endfor %}      
+        </ul>      
+      </li>
+  
+      <li class="menu">
+        <h4 class="list_title">{{ linklists[section.settings.footer_link_list3].title }}</h4>
+        <ul>
+          {% for link in linklists[section.settings.footer_link_list3].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>          
+            </li>
+          {% endfor %}      
+        </ul>      
+      </li>
+    </ul>
 
-    <div class="menu">
-      <h4 class="list_title">{{ linklists[section.settings.footer_link_list2].title }}</h4>
-      <ul>
-        {% for link in linklists[section.settings.footer_link_list2].links %}
-          <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>          
-          </li>
-        {% endfor %}      
-      </ul>      
-    </div>
-
-    <div class="menu">
-      <h4 class="list_title">{{ linklists[section.settings.footer_link_list3].title }}</h4>
-      <ul>
-        {% for link in linklists[section.settings.footer_link_list3].links %}
-          <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>          
-          </li>
-        {% endfor %}      
-      </ul>      
-    </div>
 
   </div>
   <div class="small_footer">
