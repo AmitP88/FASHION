@@ -33,6 +33,10 @@
           {% endfor %}      
         </ul>      
       </li>
+
+      <li class="menu">
+        <h4 class="list_title">{{ section.settings.newsletter_title }}</h4>
+      </li>
     </ul>
 
 
@@ -198,6 +202,14 @@
         "zh-TW": "頁尾選單"
       },
       "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": {
+        "en": "Newsletter Title"
+      },
+      "default": "Newsletter"
     },
     {
       "type": "header",
