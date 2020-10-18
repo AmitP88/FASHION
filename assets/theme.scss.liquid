@@ -187,6 +187,12 @@
   font-size: $quoteFontStyle;
 }
 
+@mixin footerListTitleFontStack {
+  font-family: $footerListTitleFontStack;
+  font-weight: $footerListTitleFontWeight;
+  font-size: $footerListTitleFontStyle;
+}
+
 @mixin visuallyHidden {
   clip: rect(0 0 0 0);
   clip: rect(0, 0, 0, 0);
@@ -448,6 +454,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign highlights_right_button_family  = settings.highlights_right_button_family -%}
 {%- assign product_price_and_discount_family = settings.product_price_and_discount_family -%}
 {%- assign quote_family = settings.quote_family -%}
+{%- assign footer_list_title_family = settings.footer_list_title_family -%}
 
 {{ accent_family | font_face }}
 {{ header_family | font_face }}
@@ -456,6 +463,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ highlights_right_button_family | font_face }}
 {{ product_price_and_discount_family | font_face }}
 {{ quote_family | font_face }}
+{{ footer_list_title_family | font_face }}
 
 {%- assign accent_family_bold = accent_family | font_modify: 'weight', 'bolder' -%}
 {%- assign highlights_description_family_bold = highlights_description_family | font_modify: 'weight', 'bolder' -%}
@@ -463,6 +471,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {%- assign highlights_right_button_family_bold = highlights_right_button_family | font_modify: 'weight', 'bolder' -%}
 {%- assign product_price_and_discount_family_bold = product_price_and_discount_family | font_modify: 'weight', 'bolder' -%}
 {%- assign quote_family_italic = quote_family | font_modify: 'style', 'italic' -%}
+{%- assign footer_list_title_family_bold = footer_list_title_family | font_modify: 'weight', 'bolder' -%}
 
 {{ accent_family_bold | font_face }}
 {{ highlights_description_family_bold | font_face }}
@@ -470,6 +479,7 @@ $color-blankstate-background: rgba($colorTextBody, 0.10);
 {{ highlights_right_button_family_bold | font_face }}
 {{ product_price_and_discount_family_bold | font_face }}
 {{ quote_family_italic | font_face }}
+{{ footer_list_title_family_bold | font_face }}
 
 // Header Font
 $headerFontStack: {{ header_family.family }}, {{ header_family.fallback_families }};
@@ -514,6 +524,12 @@ $quoteFontStack: {{ quote_family.family }}, {{ quote_family.fallback_families }}
 $quoteFontWeight: {{ quote_family.weight }};
 $quoteFontWeightBold: {{ quote_family.weight | default: 700 }};
 $quoteFontStyle: {{ quote_family_italic.style | default: 'italic' }};
+
+// Footer List Title Font
+$footerListTitleFontStack: {{ footer_list_title_family.family }}, {{ footer_list_title_family.fallback_families }};
+$footerListTitleFontWeight: {{ footer_list_title_family.weight }};
+$footerListTitleFontWeightBold: {{ footer_list_title_family_bold.weight | default: 700 }};
+$footerListTitleFontStyle: {{ footer_list_title_family.style }};
 
 @font-face {
   font-family: 'icons';
@@ -5412,6 +5428,10 @@ $disclosure-list-large: 1100px;
       .list_title {
         color: white !important;
         margin-bottom: 40px;
+        @include footerListTitleFontStack;
+        font-size: 19px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
       ul {
         margin: 0;
