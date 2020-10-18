@@ -1011,6 +1011,20 @@
           "en": "Quote font"
         },
         "default": "open_sans_i4"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Footer"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "footer_list_title_family",
+        "label": {
+          "en": "List title font"
+        },
+        "default": "source_sans_pro_n7"
       }
     ]
   },
