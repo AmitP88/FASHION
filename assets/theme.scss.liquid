@@ -5474,9 +5474,25 @@ $disclosure-list-large: 1100px;
           @include footerListFontStack;
           font-size: 16px;
         }
+        .contact-form {
+          margin-right: 20%;
+        }
+
         .input-group {
           display: block !important;
+          width: fit-content;
+          // Email input field
+          .input-group-field.newsletter__input {
+            width: 189px;
+            height: 29px;
+            border: 1px solid #a8a8a8;
+            background-color: transparent;
+            color: #a8a8a8;
+            margin: 0 auto;
+            margin-top: 23px;
+          }
 
+          // Subscribe button
           .newsletter__submit-text--large {
             width: 189px;
             height: 29px;
@@ -5495,6 +5511,8 @@ $disclosure-list-large: 1100px;
 
           .btn.newsletter__submit {
             background-color: transparent;
+            padding: 0;
+            margin-top: 15px;
           }
 
           .btn.newsletter__submit:hover {
@@ -5519,6 +5537,14 @@ $disclosure-list-large: 1100px;
           }
         }    
       }
+
+      .menu.newsletter-column {
+        .list_title {
+          margin-bottom: 23px !important;          
+        }
+      }
+
+
     }
 
   }
