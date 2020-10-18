@@ -64,7 +64,14 @@
           {% endif %}
         {% endform %}
 
-
+        <div class="social_media">
+          <img src="{{ section.settings.social_1 | img_url: '23x23' }}" alt="{{ section.settings.social_1 }}">
+          <img src="{{ section.settings.social_2 | img_url: '23x23' }}" alt="{{ section.settings.social_2 }}">
+          <img src="{{ section.settings.social_3 | img_url: '23x23' }}" alt="{{ section.settings.social_3 }}">
+          <img src="{{ section.settings.social_4 | img_url: '23x23' }}" alt="{{ section.settings.social_4 }}">
+          <img src="{{ section.settings.social_5 | img_url: '23x23' }}" alt="{{ section.settings.social_5 }}">
+          <img src="{{ section.settings.social_6 | img_url: '23x23' }}" alt="{{ section.settings.social_6 }}">
+        </div>
 
 
       </li>
@@ -249,6 +256,48 @@
         "en": "Newsletter Subtitle"
       },
       "default": "Sign Up for News Letter"
+    },
+    {
+      "type": "image_picker",
+      "id": "social_1",
+      "label": {
+        "en": "Social Media Image 1"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "social_2",
+      "label": {
+        "en": "Social Media Image 2"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "social_3",
+      "label": {
+        "en": "Social Media Image 3"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "social_4",
+      "label": {
+        "en": "Social Media Image 4"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "social_5",
+      "label": {
+        "en": "Social Media Image 5"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "social_6",
+      "label": {
+        "en": "Social Media Image 6"
+      }
     },
     {
       "type": "header",
