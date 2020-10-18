@@ -1025,6 +1025,14 @@
           "en": "List title font"
         },
         "default": "source_sans_pro_n7"
+      },
+      {
+        "type": "font_picker",
+        "id": "footer_list_family",
+        "label": {
+          "en": "List font"
+        },
+        "default": "source_sans_pro_n4"
       }
     ]
   },
