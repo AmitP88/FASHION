@@ -34,9 +34,35 @@
         </ul>      
       </li>
 
-      <li class="menu">
+      <li class="menu" data-section-id="{{ section.id }}" data-section-type="newsletter-section">
         <h4 class="list_title">{{ section.settings.newsletter_title }}</h4>
         <h6 class="subtitle">{{ section.settings.newsletter_subtitle }}</h6>
+        {% form 'customer' %}
+          {{ form.errors | default_errors }}
+          {% if form.posted_successfully? %}
+            <div class="newsletter--form">
+              <div class="note form-success">{{ 'general.newsletter_form.newsletter_confirmation' | t }}</div>
+            </div>
+          {% else %}
+            <label for="Email" class="newsletter__label hidden-label">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="newsletter--form">
+              <div class="input-group">
+                <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" name="contact[email]" id="Email" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
+                <span class="input-group-btn">
+                  <button id="Subscribe" type="submit"
+                    class="btn newsletter__submit"
+                    aria-label="{{ 'general.newsletter_form.submit' | t }}">
+                    <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+                    <span class="newsletter__submit-text--small">
+                      <span class="icon icon-arrow-right" aria-hidden="true"></span>
+                    </span>
+                  </button>
+                </span>
+              </div>
+            </div>
+          {% endif %}
+        {% endform %}
       </li>
     </ul>
 
