@@ -5445,7 +5445,7 @@ $disclosure-list-large: 1100px;
 }
 
 // --------------------------------------------------------------
-// Brands Section
+// Footer Section
 // --------------------------------------------------------------
 .site-footer {
   background-color: #1d1d1d;
@@ -5455,27 +5455,33 @@ $disclosure-list-large: 1100px;
     padding: 0 !important;
     display: flex;
     padding-bottom: 60px !important;
-    .menu {
-      width: fit-content;
-      .list_title {
-        color: white !important;
-        margin-bottom: 40px;
-        @include footerListTitleFontStack;
-        font-size: 19px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      ul {
-        margin: 0;
-        li {
-          list-style: none;
-          a {
-            color: #a8a8a8 !important;
-            @include footerListFontStack;
-          }      
+    .columns {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .menu {
+        width: fit-content;
+        .list_title {
+          color: white !important;
+          margin-bottom: 40px;
+          @include footerListTitleFontStack;
+          font-size: 19px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
-      }    
-    }    
+        ul {
+          margin: 0;
+          li {
+            list-style: none;
+            a {
+              color: #a8a8a8 !important;
+              @include footerListFontStack;
+            }      
+          }
+        }    
+      }
+    }
+
   }
 
 
