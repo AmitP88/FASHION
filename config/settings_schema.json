@@ -1024,7 +1024,7 @@
         "label": {
           "en": "List title font"
         },
-        "default": "source_sans_pro_n7"
+        "default": "source_sans_pro_n6"
       },
       {
         "type": "font_picker",
