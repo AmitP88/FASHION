@@ -36,13 +36,18 @@
         </a>                
       </div>
 
+      <div class="site-nav__item currency-app">
+        {{ 'Currency:' }} 
+        <div class="ultimate-currency"></div>
+      </div>
+
 
       {% if shop.customer_accounts_enabled %}
         <li class="site-nav__item site-nav__expanded-item site-nav__item--compressed">
           <a class="site-nav__link site-nav__link--icon" href="{{ routes.account_url }}">
             <span class="icon-fallback-text">
               <!-- <span class="icon icon-customer" aria-hidden="true"></span> -->
-              <p>My Account</p>
+              <p class="account_text">My Account</p>
               <span class="fallback-text">
                 {% if customer %}
                   {{ 'layout.customer.account' | t }}
