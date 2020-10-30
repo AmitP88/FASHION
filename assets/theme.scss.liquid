@@ -5653,8 +5653,41 @@ $disclosure-list-large: 1100px;
   }
 }
 
+// --------------------------------------------------------------
+// PAGES
+// --------------------------------------------------------------
+.grid {
+  .grid__item.large--five-sixths.push--large--one-twelfth {
+
+    .heading {
+      display: flex;
+      width: 100%;
+      max-width: 1171px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0 auto;
+      font-family: "Encode Sans Narrow Medium";
+      font-size: 27px;
+      color: $colorHighlightSubheading;
+    }
+  
+    .heading:before,
+    .heading:after {
+      content: '';
+      border: 1px solid #cdcdcd;
+      height: 3px;
+      margin: 0 5px 0 0;
+      flex: 1 0 20px;
+    }
+    
+    .heading:after {
+      margin: 0 0 0 5px;
+    }
 
 
+  }
+}
 
 
 
