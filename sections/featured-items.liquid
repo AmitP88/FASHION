@@ -21,10 +21,12 @@
                 <p class="percent_off">{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}% off</p>
               </div>            
             {% endif %}
-            <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
-            <div class="preview_icon">
-              <img src="https://cdn.shopify.com/s/files/1/0459/7501/1480/files/eye_icon_870ac8dc-9248-4535-a9f6-f44af16b1c6b.png?v=1601699412" alt="preview_icon">
-            </div>
+            <a href="{{ product.url }}">
+              <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
+              <div class="preview_icon">
+                <img src="https://cdn.shopify.com/s/files/1/0459/7501/1480/files/eye_icon_870ac8dc-9248-4535-a9f6-f44af16b1c6b.png?v=1601699412" alt="preview_icon">
+              </div>              
+            </a>
           </div>
           <div class="bottom-half">
             <h1 class="name">{{ product.title }}</h1>
