@@ -33,7 +33,12 @@
                 <button class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}"></button>
               </div>
               <div class="cart button">
-                <span class="icon icon-cart" aria-hidden="true"></span>
+                <form method="post" action="/cart/add">
+                  <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+                  <span class="icon icon-cart" aria-hidden="true">
+                    <input name="add" value="" class="add_to_cart_submit" type="submit" />                    
+                  </span>
+                </form>
               </div>
               <div class="share button">
                 <div data-network="sharethis" class="st-custom-button">
