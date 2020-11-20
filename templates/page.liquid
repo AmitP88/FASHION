@@ -13,6 +13,8 @@
             {% include 'women-products' %}
           {% elsif page.title == "Men" %}
             {% include 'men-products' %}
+          {% elsif page.title == "Schuhe Shoes" %}
+            {% include 'footwear' %}
           {% else %}
             {{ page.content }}
           {% endif %}
