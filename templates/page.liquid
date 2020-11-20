@@ -17,6 +17,8 @@
             {% include 'footwear' %}
           {% elsif page.title == "Bags & Accessories" %}
             {% include 'accessories' %}
+          {% elsif page.title == "Sales & Special Offers" %}
+            {% include 'on-sale' %}
           {% else %}
             {{ page.content }}
           {% endif %}
