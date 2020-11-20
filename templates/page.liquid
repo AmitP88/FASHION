@@ -15,6 +15,8 @@
             {% include 'men-products' %}
           {% elsif page.title == "Schuhe Shoes" %}
             {% include 'footwear' %}
+          {% elsif page.title == "Bags & Accessories" %}
+            {% include 'accessories' %}
           {% else %}
             {{ page.content }}
           {% endif %}
