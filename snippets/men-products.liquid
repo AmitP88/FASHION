@@ -1,0 +1,55 @@
+<div class="featured-items">
+  <div class="content">
+    <div class="products_container">
+      {% for product in collections.featured-items.products %}
+        {% for tag in product.tags %}
+          {% if tag == "Men" %}
+            <div class="product">
+              <div class="top-half">
+                <div class="price">
+                  <p class="price_text">{{ product.price | money }}</p>
+                </div>
+                {% if product.compare_at_price > product.price %}
+                  <div class="discount">
+                    <p class="percent_off">{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}% off</p>
+                  </div>            
+                {% endif %}
+                <a href="{{ product.url }}">
+                  <img class="product_image" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
+                  <div class="preview_icon">
+                    <img src="https://cdn.shopify.com/s/files/1/0459/7501/1480/files/eye_icon_870ac8dc-9248-4535-a9f6-f44af16b1c6b.png?v=1601699412" alt="preview_icon">
+                  </div>              
+                </a>
+              </div>
+              <div class="bottom-half">
+                <h1 class="name">{{ product.title }}</h1>
+                <div class="review">
+                  <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                </div>
+                <div class="buttons_container">
+                  <div class="wishlist button">
+                    {% include 'swym-product-view', product: product %}
+                    <button class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}"></button>
+                  </div>
+                  <div class="cart button">
+                    <form method="post" action="/cart/add">
+                      <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+                      <span class="icon icon-cart" aria-hidden="true">
+                        <input name="add" value="" class="add_to_cart_submit" type="submit" />                    
+                      </span>
+                    </form>
+                  </div>
+                  <div class="share button">
+                    <div data-network="sharethis" class="st-custom-button">
+                      <i class="fas fa-share-alt"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}        
+        {% endfor %}
+      {% endfor %}
+    </div>     
+  </div>
+</div>

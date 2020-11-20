@@ -11,6 +11,8 @@
         <div class="rte rte--nomargin rte--indented-images">
           {% if page.title == "Women" %}
             {% include 'women-products' %}
+          {% elsif page.title == "Men" %}
+            {% include 'men-products' %}
           {% else %}
             {{ page.content }}
           {% endif %}
