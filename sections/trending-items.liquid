@@ -60,6 +60,9 @@
   $(document).ready(function(){
     $('div.trending-items').find('div.product').hide();
     $('div.trending-items').find('div.product').slice(0, 8).show();
+    if ($('div.trending-items').find('div.product').length <= 8) {
+        $('div.trending-items').find('#load_more').hide();
+    }
   });
 
   $(function() {
