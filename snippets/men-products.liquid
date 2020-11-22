@@ -1,7 +1,7 @@
 <div class="featured-items" id="men_featured">
   <div class="content">
     <div class="products_container">
-      {% for product in collections.featured-items.products %}
+      {% for product in collections.all.products %}
         {% for tag in product.tags %}
           {% if tag == "Men" %}
             <div class="product">
