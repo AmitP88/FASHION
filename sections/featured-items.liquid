@@ -23,6 +23,7 @@
 </div>
 
 <div id="featured_content">
+  <div id="all_content">{% include 'all-featured-items' %}</div>
   <div id="men_content">{% include 'men-products' %}</div>
   <div id="women_content">{% include 'women-products' %}</div>
   <div id="kids_content">{% include 'kids-products' %}</div>
@@ -33,34 +34,35 @@
 <script>
   $(document).ready(function() {
     // Show women items on page load and hide the other product snippets
-    $("#men_content, #kids_content").hide();
+    $("#all_content, #men_content, #kids_content").hide();
     $("#women").addClass('active');
     $("#all, #men, #kids").removeClass('active');
   });
 
   $("#all").click(function() {
-    $("#men_content, #women_content, #kids_content").show();
+    $("#all_content").show();
+    $("#men_content, #women_content, #kids_content").hide();
     $("#all").addClass('active');
     $("#men, #women, #kids").removeClass('active');
   });
 
   $("#men").click(function() {
     $("#men_content").show();
-    $("#women_content, #kids_content").hide();
+    $("#all_content, #women_content, #kids_content").hide();
     $("#men").addClass('active');
     $("#all, #women, #kids").removeClass('active');
   });
 
   $("#women").click(function() {
     $("#women_content").show();
-    $("#men_content, #kids_content").hide();
+    $("#all_content, #men_content, #kids_content").hide();
     $("#women").addClass('active');
     $("#all, #men, #kids").removeClass('active');
   });
 
   $("#kids").click(function() {
     $("#kids_content").show();
-    $("#men_content, #women_content").hide();
+    $("#all_content, #men_content, #women_content").hide();
     $("#kids").addClass('active');
     $("#all, #men, #women").removeClass('active');
   });
