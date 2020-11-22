@@ -1,4 +1,4 @@
-<div class="featured-items">
+<div class="featured-items" id="women_featured">
   <div class="content">
     <div class="products_container">
       {% for product in collections.featured-items.products %}
@@ -52,4 +52,28 @@
       {% endfor %}
     </div>     
   </div>
+
+  <a>
+    <div class="button" id="load_more">Load More</div>
+  </a>
+
 </div>
+
+<script>
+  $(document).ready(function(){
+    $('#women_featured').find('div.product').hide();
+    $('#women_featured').find('div.product').slice(0, 8).show();
+    if ($('#women_featured').find('div.product').length <= 8) {
+        $('#women_featured').find('#load_more').hide();
+    }
+  });
+
+  $(function() {
+    $('#women_featured').find('#load_more').click(function() {
+      $('#women_featured').find('div.product:hidden').slice(0, 8).show();
+      if ($('#women_featured').find('div.product').length == $('#women_featured').find('div.product:visible').length) {
+        $('#women_featured').find('#load_more').hide();
+      }
+    });
+  });
+</script>
