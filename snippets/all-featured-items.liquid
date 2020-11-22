@@ -59,6 +59,9 @@
   $(document).ready(function(){
     $('#all_featured').find('div.product').hide();
     $('#all_featured').find('div.product').slice(0, 8).show();
+    if ($('#all_featured').find('div.product').length <= 8) {
+        $('#all_featured').find('#load_more').hide();
+    }
   });
 
   $(function() {
