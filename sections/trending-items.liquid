@@ -63,10 +63,10 @@
   });
 
   $(function() {
-    $('#load_more').click(function() {
+    $('div.trending-items').find('#load_more').click(function() {
       $('div.trending-items').find('div.product:hidden').slice(0, 8).show();
       if ($('div.trending-items').find('div.product').length == $('div.trending-items').find('div.product:visible').length) {
-        $('#load_more').hide();
+        $('div.trending-items').find('#load_more').hide();
       }
     });
   });
