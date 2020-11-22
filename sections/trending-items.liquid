@@ -51,10 +51,28 @@
       {% endfor %}
     </div>     
   </div>
-  <a href="#">
-    <div class="button">Load More</div>
+  <a>
+    <div class="button" id="load_more">Load More</div>
   </a>
 </div>
+
+{% assign collection_length = collections.trending-item.all_products_count %}
+
+<script>
+  $(document).ready(function(){
+    $('div.trending-items').find('div.product').hide();
+    $('div.trending-items').find('div.product').slice(0, 8).show();
+  });
+
+  $(function() {
+    $('#load_more').click(function() {
+      $('div.trending-items').find('div.product:hidden').slice(0, 8).show();
+      if ($('div.trending-items').find('div.product').length == $('div.trending-items').find('div.product:visible').length) {
+        $('#load_more').hide();
+      }
+    });
+  });
+</script>
 
 
 {% schema %}
