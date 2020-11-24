@@ -3422,11 +3422,11 @@ button.mfp-arrow {
     @include transition(opacity 0.15s ease-in);
   }
 
-  .grid-uniform & {
-    display: table-cell;
-    vertical-align: middle;
-    overflow: hidden;
-  }
+  // .grid-uniform & {
+  //   display: table-cell;
+  //   vertical-align: middle;
+  //   overflow: hidden;
+  // }
 }
 
 .grid-product__image-link--loading {
@@ -3439,13 +3439,13 @@ button.mfp-arrow {
   margin: 0 auto;
 }
 
-@include at-query($max, $small) {
-  .grid-uniform {
-    .grid-product__image-wrapper {
-      height: auto !important;
-    }
-  }
-}
+// @include at-query($max, $small) {
+//   .grid-uniform {
+//     .grid-product__image-wrapper {
+//       height: auto !important;
+//     }
+//   }
+// }
 
 .grid-collage {
   .grid-product__image {
@@ -5881,6 +5881,10 @@ $disclosure-list-large: 1100px;
   .section-header__title {
     font-family: "Open Sans",sans-serif;    
   }
+  .grid-uniform {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 
@@ -5981,6 +5985,16 @@ $disclosure-list-large: 1100px;
             margin: 20px 0 !important;
             justify-content: center;
           }
+        }
+      }
+    }
+
+    .product-recommendations {
+      .grid-uniform {
+        display: grid;
+        grid-template-columns: 100%;
+        .recommended_products_container {
+          padding-bottom: 60px;
         }
       }
     }
@@ -6163,8 +6177,37 @@ $disclosure-list-large: 1100px;
 
     }
 
+    .product-recommendations {
+      @include at-query($max, 550px) {
+        .grid-uniform {
+          .recommended_products_container {
+            padding-bottom: 60px;
+          }
+        }
+      }
 
+      @include at-query($min, 550px) {
+        .grid-uniform {
+          display: inline-grid;
+          grid-template-columns: auto auto;
+          gap: 30px;
+        }
+      }
 
+      @include at-query($min, 850px) {
+        .grid-uniform {
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 30px;          
+        }
+      }
+
+      @include at-query($min, 1100px) {
+        .grid-uniform {
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 30px;          
+        }
+      }
+    }
   }
 
   /* --- From Mobile to Tablet --- */
@@ -6400,6 +6443,12 @@ $disclosure-list-large: 1100px;
         max-width: 1174px;
         padding-left: 1% !important;
       }
+    }
+
+    .grid-uniform {
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 30px;          
     }
 
 
