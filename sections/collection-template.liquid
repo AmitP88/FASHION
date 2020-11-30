@@ -14,12 +14,12 @@
       <style>
         {%- if height_width_ratio < 45 -%}
           .collection-hero__image-wrapper::after {
-            padding-bottom: {{ height_width_ratio }}%;
+            padding-bottom: {{ height_width_ratio }};
           }
         {%- else -%}
           @media screen and (max-width: 768px) {
             .collection-hero__image-wrapper::after {
-              padding-bottom: {{ height_width_ratio }}%;
+              padding-bottom: {{ height_width_ratio }};
             }
           }
         {%- endif -%}
