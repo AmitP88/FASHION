@@ -1,9 +1,6 @@
 <!-- /templates/collection.liquid -->
 {%- if section.settings.show_collection_image and collection.image -%}
   <div class="collection-hero">
-    <noscript>
-      <div class="collection-hero__image-no-js" style="background-image:url({{ collection.image | img_url: '2048x2048' }});"></div>
-    </noscript>
     {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
     {%- comment -%}
       If the collection.image height is < 70% of its width on mobile or < 45% on desktop,
@@ -14,12 +11,12 @@
       <style>
         {%- if height_width_ratio < 45 -%}
           .collection-hero__image-wrapper::after {
-            padding-bottom: {{ height_width_ratio }};
+            padding-bottom: {{ height_width_ratio }}%;
           }
         {%- else -%}
           @media screen and (max-width: 768px) {
             .collection-hero__image-wrapper::after {
-              padding-bottom: {{ height_width_ratio }};
+              padding-bottom: {{ height_width_ratio }}%;
             }
           }
         {%- endif -%}
