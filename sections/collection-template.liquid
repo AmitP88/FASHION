@@ -95,40 +95,6 @@
     {%- endif -%}
   </header>
 
-  {%- if section.settings.collection_products_grid == 'collage' -%}
-    <div class="grid grid-collage">
-      {% comment %}
-        Loop through our products in the current collection.
-        See the snippet 'snippets/product-grid-collage.liquid'.
-
-        `is_reverse_row__product`, `three_row_index__product`, `collection_product_count`, and `divisible_by_three__product` are
-        all used by 'snippets/product-grid-collage.liquid'
-      {% endcomment %}
-      {%- assign is_reverse_row__product = false -%}
-      {%- assign three_row_index__product = 0 -%}
-      {%- assign collection_product_count__product = collection.products.size -%}
-      {%- assign divisible_by_three__product = collection_product_count__product | modulo:3 -%}
-      {%- for product in collection.products -%}
-        {%- include 'product-grid-collage' -%}
-      {%- else -%}
-
-        {%- if shop.products_count == 0 -%}
-          {% comment %}
-            Add default products to help with onboarding for collections/all only
-          {% endcomment %}
-          {% include 'onboarding-featured-products' -%}
-        {%- else -%}
-          {% comment %}
-            If collection exists but is empty, display message
-          {% endcomment %}
-          <div class="grid__item text-center">
-            <p>{{ 'collections.general.no_matches' | t }}</p>
-          </div>
-        {%- endif -%}
-      {%- endfor -%}
-
-    </div>
-  {%- elsif section.settings.collection_products_grid == 'grid' -%}
     <div class="grid-uniform">
       {%- assign grid_item_width = 'medium--one-half large--one-third' -%}
       {%- for product in collection.products -%}
@@ -149,7 +115,6 @@
         {%- endif -%}
       {%- endfor -%}
     </div>
-  {%- endif -%}
 
   {%- if paginate.pages > 1 -%}
     {%- include 'pagination' -%}
@@ -271,117 +236,6 @@
         "zh-CN": "启用标签筛选",
         "zh-TW": "啟用標籤篩選功能"
       }
-    },
-    {
-      "type": "header",
-      "content": {
-        "cs": "Produkty",
-        "da": "Produkter",
-        "de": "Produkte",
-        "en": "Products",
-        "es": "Productos",
-        "fi": "Tuotteet",
-        "fr": "Produits",
-        "hi": "उत्पाद",
-        "it": "Prodotti",
-        "ja": "商品管理",
-        "ko": "제품",
-        "nb": "Produkter",
-        "nl": "Producten",
-        "pl": "Produkty",
-        "pt-BR": "Produtos",
-        "pt-PT": "Produtos",
-        "sv": "Produkter",
-        "th": "สินค้า",
-        "tr": "Ürünler",
-        "vi": "Sản phẩm",
-        "zh-CN": "产品",
-        "zh-TW": "產品"
-      }
-    },
-    {
-      "type": "select",
-      "id": "collection_products_grid",
-      "label": {
-        "cs": "Styl mřížky",
-        "da": "Gittertypografi",
-        "de": "Rasterstil",
-        "en": "Grid style",
-        "es": "Estilo de cuadrícula",
-        "fi": "Ruudukon tyyli",
-        "fr": "Style de grille",
-        "hi": "ग्रिड स्टाइल",
-        "it": "Stile griglia",
-        "ja": "グリッドスタイル",
-        "ko": "그리드 스타일",
-        "nb": "Rutenettstil",
-        "nl": "Rasterstijl",
-        "pl": "Styl siatki",
-        "pt-BR": "Estilo da grade",
-        "pt-PT": "Estilo da grelha",
-        "sv": "Rutnätsstil",
-        "th": "สไตล์กริด",
-        "tr": "Izgara stili",
-        "vi": "Kiểu lưới",
-        "zh-CN": "网格样式",
-        "zh-TW": "網格樣式"
-      },
-      "options": [
-        {
-          "value": "collage",
-          "label": {
-            "cs": "Koláž",
-            "da": "Collage",
-            "de": "Collage",
-            "en": "Collage",
-            "es": "Collage",
-            "fi": "Kollaasi",
-            "fr": "Collage",
-            "hi": "कोलाज",
-            "it": "Collage",
-            "ja": "コラージュ",
-            "ko": "콜라주",
-            "nb": "Fotomontasje",
-            "nl": "Collage",
-            "pl": "Kolaż",
-            "pt-BR": "Colagem",
-            "pt-PT": "Colagem",
-            "sv": "Kollage",
-            "th": "ภาพตัดแปะ",
-            "tr": "Kolaj",
-            "vi": "Ghép",
-            "zh-CN": "拼贴画",
-            "zh-TW": "拼貼"
-          }
-        },
-        {
-          "value": "grid",
-          "label": {
-            "cs": "Mřížka",
-            "da": "Gitter",
-            "de": "Raster",
-            "en": "Grid",
-            "es": "Cuadrícula",
-            "fi": "Ruudukko",
-            "fr": "Grille",
-            "hi": "ग्रिड",
-            "it": "Griglia",
-            "ja": "グリッド",
-            "ko": "그리드",
-            "nb": "Rutenett",
-            "nl": "Raster",
-            "pl": "Siatka",
-            "pt-BR": "Grade",
-            "pt-PT": "Grelha",
-            "sv": "Rutnät",
-            "th": "กริด",
-            "tr": "Izgara",
-            "vi": "Lưới",
-            "zh-CN": "网格",
-            "zh-TW": "網格"
-          }
-        }
-      ]
     },
     {
       "type": "checkbox",
