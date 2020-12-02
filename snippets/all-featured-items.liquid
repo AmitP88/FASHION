@@ -13,7 +13,7 @@
               </div>            
             {% endif %}
             <a href="{{ product.url }}">
-              <img class="product_image lazyload" src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
+              <img class="product_image lazyload" data-src="{{ product.featured_image | img_url: '270x405' }}" alt="{{ product.title }}" >
               <div class="preview_icon">
                 <img src="https://cdn.shopify.com/s/files/1/0459/7501/1480/files/eye_icon_870ac8dc-9248-4535-a9f6-f44af16b1c6b.png?v=1601699412" alt="preview_icon">
               </div>              
