@@ -42,7 +42,7 @@
           </div>
         {% endunless %}
 
-        <div class="grid__item text_content large--six-tenths push--large--one-tenth">
+        <div class="grid__item blog_text_content large--six-tenths push--large--one-tenth">
           <div class="content">
             <h2 class="h3"><a class="article__heading-link" href="{{ article.url }}">{{ article.title }}</a></h2>
             <time datetime="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}" class="date">{{ article.published_at | date: format: 'date' }}</time>
