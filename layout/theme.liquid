@@ -52,7 +52,8 @@
     };
   </script>
 
-  {{ 'jquery-2.2.3.min.js' | asset_url | script_tag }}
+  <script src="{{ 'jquery-2.2.3.min.js' | asset_url }}" async="async"></script>
+  
 
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
@@ -76,8 +77,8 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"
-    async
-    defer
+    async="async"
+    defer="defer"
   >
   </script>
 
