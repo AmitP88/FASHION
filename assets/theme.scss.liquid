@@ -5113,10 +5113,19 @@ $disclosure-list-large: 1100px;
               position: relative;
               border: 1px solid #bbbabb;
               border-radius: 50%;
-
-
-
-              
+              .swym-button {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                overflow: auto;
+              }
+              .swym-button.swym-add-to-wishlist-view-product.swym-heart:after {
+                content: "\f004" !important;
+                color: #bbbabb;
+              }
               .icon-cart:before {
                 position: absolute;
                 left: 6px;
